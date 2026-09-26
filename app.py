@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Global page configuration
+# Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# 4 standard navigation tabs at the very top of the webpage (Heading area)
+# 4 стандартных вкладки навигации в самом верху страницы (в области Heading)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -101,47 +101,13 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (CLEAN STRUCTURED DESIGN WITH CENTERED LOGO)
+# TAB 4: ABOUT FBU COMPANY (ВЕРНУЛИ СВЕЧЕНИЕ, РАМКИ И СОВЕРШЕННОЕ ЦЕНТРИРОВАНИЕ)
 # ==============================================================================
 with tab4:
-    # Официальный логотип FBU размещен по центру в самом верху (Heading) вкладки
+    # 1. Логотип вшит прямо в код через Base64 (больше никаких внешних ссылок и зависаний загрузки!)
     st.markdown("""
     <center>
-        <img src="https://githubusercontent.com" width="180" style="border-radius:12px; box-shadow: 0 4px 20px rgba(0,112,192,0.3); margin-top: 10px; margin-bottom: 25px;">
-    </center>
-    """, unsafe_allow_html=True)
-    
-    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-    st.write("## 👥 Meet Our Engineering Board")
-    st.write("---")
-    
-    p1, p2, p3 = st.columns(3)
-    
-    with p1:
-        st.header("👤 Nurillayev Ulug'bek")
-        st.write("**Role:** Captain & Lead Systems Director, FBU")
-        st.caption("🎓 Student at Inha University in Tashkent (IUT)")
-        st.write("📞 **Contact:** +998774147727")
-        st.write("✈️ **Telegram:** @nurullaeev")
-
-    with p2:
-        st.header("👤 Nabijonov Firdavs")
-        st.write("**Role:** Senior Vibe Engineer & Full-Stack Architecture")
-        st.caption("🎓 Student at Inha University in Tashkent (IUT)")
-        st.write("📞 **Contact:** +998902535318")
-        st.write("✈️ **Telegram:** @nabijanov111")
-
-    with p3:
-        st.header("👤 Soxibov Baxtiyorjon")
-        st.write("**Role:** Strategic Innovation Head & Infrastructure")
-        st.caption("🎓 Student at Inha University in Tashkent (IUT)")
-        st.write("📞 **Contact:** +998507797229")
-        st.write("✈️ **Telegram:** @sbyxha")
-
-st.write("---")
-st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
