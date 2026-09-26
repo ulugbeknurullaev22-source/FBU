@@ -140,3 +140,4 @@ with tab4:
             st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Soxibov Baxtiyorjon</h2>", unsafe_allow_html=True)
             st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Strategic Innovation Head</p>", unsafe_allow_html=True)
             st.markdown("<p style='text-align: center; color: #8892B0; font-size: 14px;'>🎓 Student at Inha University in Tashkent (IUT)</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; margin-top: 15px;'>📞 <b>Contact:</b> +998507797229<br>✈️ <b>Telegram:</b> @sbyxha</p>", unsafe_allow_html=True)
