@@ -119,7 +119,7 @@ with tab1:
             """)
 
 # ==============================================================================
-# TAB 2: LIVE METRICS HUB (С КОРРЕКТНЫМИ ЦЕННОСТЯМИ В UZS)
+# TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
     st.write("### 📊 Macro-Data Stream Summary")
@@ -156,7 +156,7 @@ with tab2:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
         target_data = pd.DataFrame({
             'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 
-            'Volume': [640718, 53376]
+            'Volume': [640700, 53394]
         })
         fig_target = px.pie(target_data, values='Volume', names='Alert Vector', 
                             color_discrete_sequence=['#172A45', '#0070C0'])
