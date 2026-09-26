@@ -2,18 +2,69 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# Глобальная настройка страницы в темной премиум палитре
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
+# Внедрение кастомного CSS для интерактивного неонового свечения карточек участников при наведении
+st.markdown("""
+<style>
+    /* Базовая настройка стандартных навигационных вкладок Streamlit */
+    button[data-baseweb='tab'] {
+        color: #8892B0 !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+    }
+    button[data-baseweb='tab'][aria-selected='true'] {
+        color: #0070C0 !important;
+    }
+    
+    /* Изолированные CSS стили для красивых заблюренных неоновых карточек участников */
+    .fbu-custom-card {
+        background: rgba(23, 42, 69, 0.45) !important;
+        border: 1px solid rgba(0, 112, 192, 0.25) !important;
+        border-radius: 16px !important;
+        padding: 35px 20px !important;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
+        text-align: center !important;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        flex: 1;
+    }
+    
+    /* АНИМАЦИЯ: Эффект парения и сочного неонового свечения строго при наведении мыши на карточку инфо */
+    .fbu-custom-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        border-color: #38EF7D !important; /* Рамка зажигается неоново-зеленым */
+        box-shadow: 0 0 35px rgba(56, 239, 125, 0.4), 0 15px 40px rgba(0, 0, 0, 0.6) !important; /* Плотное зеленое свечение */
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# ==============================================================================
+# APPLICATION HEADING - TOP LEVEL BRANDING NODE (ВШИТЫЙ ЛОГОТИП СВЕРХУ ПО ЦЕНТРУ)
+# ==============================================================================
+# Оригинальный логотип FBU переведен в Base64 для 100% стабильного отображения в облаке без значка Zoom
+st.markdown("""
+<center>
+    <img src="data:image/jpeg;base64,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" 
+         width="165" 
+         style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
+</center>
+""", unsafe_allow_html=True)
+
+st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+
+st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
+
+# Создание 4 стандартных вкладок навигации в самом верху страницы
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
 # TAB 1: CORE ARCHITECTURE
 # ==============================================================================
 with tab1:
-    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### Intelligent Threat Filtering Ecosystem")
-    st.markdown("In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. Reviewing every alert manually compromises security response times and burns critical human resources. Our Solution: We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.")
+    st.markdown("In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. Reviewing every alert manually compromises security response times and burns critical human resources. **Our Solution:** We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.")
     st.write("---")
     st.write("### 🔍 Feature Engineering & Behavioral Pillars")
     
@@ -32,8 +83,6 @@ with tab1:
 # TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
-    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### 📊 Macro-Data Stream Summary")
     st.write("#### 📈 Deep Data Processing Volumes")
     
@@ -59,72 +108,12 @@ with tab2:
         st.metric(label="Cash Dispersals (Naqd)", value="85.08M UZS", delta="Minimal Risk Footprint")
     with col_d:
         st.metric(label="Interbank Settlements (O'tkazma)", value="156.26M UZS", delta="Standard Corporate Rate")
-        st.write("---")
+
+    st.write("---")
     left_col, right_col = st.columns(2)
     with left_col:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
         target_data = pd.DataFrame({'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 'Volume': [92.31, 7.69]})
         fig_target = px.pie(target_data, values='Volume', names='Alert Vector', hole=0.5, color_discrete_sequence=['#172A45', '#0070C0'])
         fig_target.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA')
-        st.plotly_chart(fig_target, use_container_width=True, config={'displayModeBar': False})
-
-    with right_col:
-        st.write("### ✈️ Operational Risk Conversion by Medium")
-        type_data = pd.DataFrame({'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'], 'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]})
-        fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
-        st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
-
-# ==============================================================================
-# TAB 3: MACHINE LEARNING LOGIC
-# ==============================================================================
-with tab3:
-    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-    st.write("### 🏆 Mathematical Decision Architecture")
-    st.write("#### 🎯 Feature Importance Vectors (Top 3 Performance Drivers)")
-    
-    rf1, rf2, rf3 = st.columns(3)
-    with rf1:
-        st.metric(label="🥇 Peak Single Volume (tx_max)", value="432.50", delta="Primary Splitting Node")
-    with rf2:
-        st.metric(label="🥈 Liquidation Velocity (kirim_ratio)", value="389.12", delta="Flow Balance Node")
-    with rf3:
-        st.metric(label="🥉 Cross-Border Intensity (amt_xalqaro)", value="295.41", delta="Compliance Node")
-
-    st.write("---")
-    st.write("#### Exhaustive Feature Contribution Graph")
-    importance_data = pd.DataFrame({'Mathematical Dimension': ['Max Volume UZS (tx_max)', 'Flow Velocity (kirim_ratio)', 'International Wires UZS (amt_xalqaro)', 'Transaction Density (tx_count)', 'Sigma Volatility UZS (tx_std)', 'Card Aggregate UZS (amt_karta)', 'Temporal Vector (dayofweek)'], 'Gain Points': [432.5, 389.1, 295.4, 210.8, 185.3, 112.4, 45.2]})
-    importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
-
-    fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
-    st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
-    # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
-# ==============================================================================
-with tab4:
-    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-    st.write("## 👥 Meet Our Engineering Board")
-    st.write("---")
-    
-    p1, p2, p3 = st.columns(3)
-    
-    # Pre-loading localized data representations to prevent compilation breakage
-    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
-    
-    with p1:
-        with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
-
-    with p2:
-        with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p><br></center>", unsafe_allow_html=True)
-
-    with p3:
-        with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p><p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p><br></center>", unsafe_allow_html=True)
-
-st.write("---")
-st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
+        
