@@ -196,7 +196,7 @@ with tab2:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
         target_data = pd.DataFrame({
             'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 
-            'Volume': [640718, 53376]
+            'Volume': [92.31, 7.69]
         })
         fig_target = px.pie(target_data, values='Volume', names='Alert Vector', hole=0.5,
                             color_discrete_sequence=['#172A45', '#0070C0'])
