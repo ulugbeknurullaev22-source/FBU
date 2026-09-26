@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Global page configuration with a sleek dark dashboard layout
+# Global page configuration in a dark dashboard layout
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Custom CSS for Inha University Deep Blue style and premium Glassmorphism blur effects
+# Custom CSS for INHA University Deep Blue style and premium Glassmorphism blur effects
 st.markdown("""
 <style>
     /* Main background and global text styling */
@@ -119,7 +119,7 @@ with tab1:
             """)
 
 # ==============================================================================
-# TAB 2: LIVE METRICS HUB (GLASSMORPHIC CARDS)
+# TAB 2: LIVE METRICS HUB (С КОРРЕКТНЫМИ ЦЕННОСТЯМИ В UZS)
 # ==============================================================================
 with tab2:
     st.write("### 📊 Macro-Data Stream Summary")
@@ -130,7 +130,7 @@ with tab2:
     with c1:
         st.metric(label="Total Transaction Records Processed", value="694,094 rows", delta="Train + Test Batches")
     with c2:
-        st.metric(label="Mean Transaction Index Metric", value="42.53 Index", delta="+1.24% Vs Baseline")
+        st.metric(label="Mean Transaction Amount", value="42.53K UZS", delta="+1.24% Vs Baseline")
     with c3:
         st.metric(label="Automated False Alarm Suppression", value="92.31%", delta="Operational Noise Cut", delta_color="inverse")
     with c4:
@@ -138,26 +138,25 @@ with tab2:
 
     st.write("---")
     
-    st.write("#### 💳 Channel Throughput & Risk Allocations")
+    st.write("#### 💳 Channel Throughput & Volume Allocation")
     col_a, col_b, col_c, col_d = st.columns(4)
     with col_a:
-        st.metric(label="International Wires (Xalqaro)", value="142.54M Index", delta="Critical Exposure Level")
+        st.metric(label="International Wires (Xalqaro)", value="142.54M UZS", delta="Critical Exposure Level")
     with col_b:
-        st.metric(label="Card Operations (Karta)", value="310.21M Index", delta="Highest Volume Channel")
+        st.metric(label="Card Operations (Karta)", value="310.21M UZS", delta="Highest Volume Channel")
     with col_c:
-        st.metric(label="Cash Dispersals (Naqd)", value="85.08M Index", delta="Minimal Risk Footprint")
+        st.metric(label="Cash Dispersals (Naqd)", value="85.08M UZS", delta="Minimal Risk Footprint")
     with col_d:
-        st.metric(label="Interbank Settlements (O'tkazma)", value="156.26M Index", delta="Standard Corporate Rate")
+        st.metric(label="Interbank Settlements (O'tkazma)", value="156.26M UZS", delta="Standard Corporate Rate")
 
     st.write("---")
     
-    # Graphs layout in deep neon palettes
     left_col, right_col = st.columns(2)
     with left_col:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
         target_data = pd.DataFrame({
             'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 
-            'Volume': [32000, 2694]
+            'Volume': [640718, 53376]
         })
         fig_target = px.pie(target_data, values='Volume', names='Alert Vector', 
                             color_discrete_sequence=['#172A45', '#0070C0'])
@@ -187,7 +186,7 @@ with tab3:
     with rf1:
         st.markdown("#### 🥇 Peak Single Volume (`tx_max`)")
         st.metric(label="Information Gain Weight", value="432.50", delta="Primary Splitting Node")
-        st.caption("Sudden massive capital spikes diverge violently from historical retail baselines.")
+        st.caption("Sudden massive UZS capital spikes diverge violently from historical retail baselines.")
     with rf2:
         st.markdown("#### 🥈 Liquidation Velocity (`kirim_ratio`)")
         st.metric(label="Information Gain Weight", value="389.12", delta="Flow Balance Node")
@@ -195,7 +194,8 @@ with tab3:
     with rf3:
         st.markdown("#### 🥉 Cross-Border Intensity (`amt_xalqaro`)")
         st.metric(label="Information Gain Weight", value="295.41", delta="Compliance Node")
-        st.caption("Automated routing adjustments based on international systemic risk classifications.")
+        st.caption("Automated routing adjustments based on international UZS transaction volume classes.")
 
     st.write("---")
     st.write("#### Exhaustive Feature Contribution Graph")
+    importance_data = pd.DataFrame({
