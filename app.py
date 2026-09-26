@@ -5,10 +5,9 @@ import plotly.express as px
 # Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Injecting clean CSS configurations for Glassmorphism effects and custom tab styling
+# Injecting clean CSS configurations for custom tab styling
 st.markdown("""
 <style>
-    /* Premium dark framework base matching configuration rules */
     button[data-baseweb="tab"] {
         color: #8892B0 !important;
         font-size: 15px !important;
@@ -24,9 +23,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==============================================================================
-# APPLICATION HEADING - TOP LEVEL BRANDING NODE
+# APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
 # ==============================================================================
-# Clean centralized image rendering with completely disabled interaction and zoom overlays
 st.markdown("""
 <center>
     <img src="https://githubusercontent.com" 
@@ -135,21 +133,27 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY
+# TAB 4: ABOUT FBU COMPANY (ВЫРАВНИВАНИЕ ПО СЕРЕДИНЕ, БЕЗ СБОЕВ)
 # ==============================================================================
 with tab4:
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
-    p1, p2, p3 = st.columns(3)
-    
-    with p1:
-        with st.container(border=True):
-            st.markdown("<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div><h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:5px; margin-bottom:5px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:5px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
-
-    with p2:
-        with st.container(border=True):
+    # Сборка карточек участников в одну таблицу без использования вложенных with блоков.
+    # Это на 100% страхует от IndentationError и делает текст строго по центру.
+    st.markdown("""
+    <table style="width:100%; border:none; border-collapse:collapse; background:transparent;">
+        <tr>
+            <td style="width:33%; padding:15px; vertical-align:top;">
+                <div style="background:rgba(23,42,69,0.4); border:1px solid rgba(0,112,192,0.25); border-radius:12px; padding:25px 15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+                    <div style="font-size:65px; color:#8892B0; margin-bottom:10px;">👤</div>
+                    <h3 style="color:#FFFFFF; margin:0; font-size:24px;">Nurillayev Ulug'bek</h3>
+                    <p style="color:#38EF7D; font-weight:bold; margin:5px 0;">Captain & Lead Systems Director, FBU</p>
+                    <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
+                    <br>
+                    <p style="margin:3px 0; color:#F8F9FA;">📞 <b>Contact:</b> +998774147727</p>
+                    <p style="margin:0; color:#F8F9FA;">✈️ <b>Telegram:</b> @nurullaeev</p>
