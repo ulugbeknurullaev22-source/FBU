@@ -222,3 +222,4 @@ with tab2:
             font_color='#F8F9FA',
             coloraxis_showscale=False,
             xaxis=dict(showgrid=False, zeroline=False, showline=False),
+        )
