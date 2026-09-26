@@ -5,34 +5,13 @@ import plotly.express as px
 # Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Внедрение CSS-стилей для интерактивного неонового свечения карточек участников
-st.markdown("""
-<style>
-    .team-card {
-        background: rgba(23, 42, 69, 0.5) !important;
-        border: 1px solid rgba(0, 112, 192, 0.3) !important;
-        border-radius: 16px !important;
-        padding: 25px !important;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
-        transition: all 0.4s ease-in-out !important;
-        margin-bottom: 20px !important;
-    }
-    .team-card:hover {
-        transform: translateY(-8px) scale(1.02) !important;
-        border-color: #38EF7D !important;
-        box-shadow: 0 0 35px rgba(56, 239, 125, 0.4), 0 10px 40px rgba(0, 0, 0, 0.6) !important;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# ШАГ 1: Создание 4 стандартных вкладок навигации в самом верху страницы (в области Heading)
+# Создание 4 стандартных вкладок навигации в самом верху страницы (в области Heading)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
 # TAB 1: CORE ARCHITECTURE
 # ==============================================================================
 with tab1:
-    # Главный баннер проекта внутри вкладки
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     
@@ -64,7 +43,6 @@ with tab1:
 # TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
-    # Главный баннер проекта внутри вкладки
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     
@@ -119,7 +97,6 @@ with tab2:
 # TAB 3: MACHINE LEARNING LOGIC
 # ==============================================================================
 with tab3:
-    # Главный баннер проекта внутри вкладки
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     
@@ -142,14 +119,13 @@ with tab3:
     }).sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY
+# TAB 4: ABOUT FBU COMPANY (ОБЛЕГЧЁННАЯ ВЕРСИЯ БЕЗ СБОЕВ)
 # ==============================================================================
 with tab4:
-    # Главный баннер проекта внутри вкладки о компании
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     
@@ -157,29 +133,30 @@ with tab4:
     st.write("---")
     
     p1, p2, p3 = st.columns(3)
+    
     with p1:
-        st.markdown("""
-        <div class="team-card">
-            <h3 style='color:#FFFFFF !important; margin:0;'>Nurillayev Ulug'bek</h3>
-            <p style='color:#38EF7D; font-weight:bold; margin:0;'>Captain & Lead Systems Director, FBU</p>
-            <p style='color:#CDD6F4; font-size:14px;'>
-                🎓 Student at Inha University in Tashkent (IUT).<br>
-                Directing global operational pipelines.<br><br>
-                📞 <b>Contact:</b> +998774147727<br>
-                ✈️ <b>Telegram:</b> @nurullaeev
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+        with st.container(border=True):
+            st.header("Nurillayev Ulug'bek")
+            st.write("**Role:** Captain & Lead Systems Director, FBU")
+            st.caption("🎓 Student at Inha University in Tashkent (IUT)")
+            st.write("📞 **Contact:** +998774147727")
+            st.write("✈️ **Telegram:** @nurullaeev")
 
     with p2:
-        st.markdown("""
-        <div class="team-card">
-            <h3 style='color:#FFFFFF !important; margin:0;'>Nabijonov Firdavs</h3>
-            <p style='color:#38EF7D; font-weight:bold; margin:0;'>Senior Vibe Engineer</p>
-            <p style='color:#CDD6F4; font-size:14px;'>
-                🎓 Student at Inha University in Tashkent (IUT).<br>
-                Deep specialist in elite vibe full-stack coding.<br><br>
-                📞 <b>Contact:</b> +998902535318<br>
-                ✈️ <b>Telegram:</b> @nabijanov111
-            </p>
-        </div>
+        with st.container(border=True):
+            st.header("Nabijonov Firdavs")
+            st.write("**Role:** Senior Vibe Engineer & Full-Stack Architecture")
+            st.caption("🎓 Student at Inha University in Tashkent (IUT)")
+            st.write("📞 **Contact:** +998902535318")
+            st.write("✈️ **Telegram:** @nabijanov111")
+
+    with p3:
+        with st.container(border=True):
+            st.header("Soxibov Baxtiyorjon")
+            st.write("**Role:** Strategic Innovation Head & Infrastructure")
+            st.caption("🎓 Student at Inha University in Tashkent (IUT)")
+            st.write("📞 **Contact:** +998507797229")
+            st.write("✈️ **Telegram:** @sbyxha")
+
+st.write("---")
+st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
