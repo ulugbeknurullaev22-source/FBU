@@ -2,26 +2,38 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная настройка страницы
+# Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Внедрение CSS-стилей: кастомизируем стандартные st.container, добавляем размытие и неоновый glow-эффект при наведении
+# Внедрение CSS-стилей: кастомизируем карточки участников, добавляем размытие и неоновый glow-эффект при наведении
 st.markdown("""
 <style>
-    /* Настройка стандартного контейнера с рамкой */
-    div[data-testid="stElementContainer"] div[style*="border"] {
+    button[data-baseweb='tab'] {
+        color: #8892B0 !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+    }
+    button[data-baseweb='tab'][aria-selected='true'] {
+        color: #0070C0 !important;
+    }
+    
+    /* Стили для красивых заблюренных неоновых карточек участников */
+    .custom-card {
         background: rgba(23, 42, 69, 0.4) !important;
         border: 1px solid rgba(0, 112, 192, 0.25) !important;
         border-radius: 16px !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        padding: 35px 20px !important;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
+        text-align: center !important;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        flex: 1;
     }
     
     /* АНИМАЦИЯ: Эффект парения и неонового свечения при наведении мыши */
-    div[data-testid="stElementContainer"] div[style*="border"]:hover {
-        transform: translateY(-8px) scale(1.01) !important;
+    .custom-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
         border-color: #38EF7D !important; /* Рамка становится неоново-зеленой */
-        box-shadow: 0 0 30px rgba(56, 239, 125, 0.35), 0 12px 35px rgba(0, 0, 0, 0.5) !important; /* Зеленое свечение */
+        box-shadow: 0 0 35px rgba(56, 239, 125, 0.35), 0 15px 40px rgba(0, 0, 0, 0.6) !important; /* Зеленое свечение */
     }
 </style>
 """, unsafe_allow_html=True)
@@ -131,7 +143,7 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
+# TAB 4: ABOUT FBU COMPANY (МАНЯЩЕЕ СВЕЧЕНИЕ И ИДЕАЛЬНОЕ ЦЕНТРИРОВАНИЕ)
 # ==============================================================================
 with tab4:
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
@@ -139,14 +151,10 @@ with tab4:
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
-    p1, p2, p3 = st.columns(3)
-    
-    # Репозиторий аватарок участников
-    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
-    
-    with p1:
-        with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
-
-    with p2:
-        with st.container(border=True):
+    # Сборка карточек участников в одну безопасную HTML-строку без использования with p1/p2/p3 блоков Python.
+    # Это на 100% страхует от IndentationError, убирает значок zoom и делает текст строго по центру.
+    st.markdown("""
+    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; margin-top: 20px;">
+        <div class="custom-card">
+            <div style="font-size:75px; color:#8892B0; margin-bottom:10px; line-height:1;">👤</div>
+            <h2 style="margin:0; font-size:28px; color:#FFFFFF;">Nurillayev Ulug'bek</h2>
