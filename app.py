@@ -105,19 +105,19 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (WITH CENTERED HIGH-QUALITY CORPORATE LOGO)
+# TAB 4: ABOUT FBU COMPANY (LOGO MOVED TO HEADING REGION AND RENDERED VIA GITHUB)
 # ==============================================================================
 with tab4:
-    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-    st.write("---")
-    
-    # Центрированный блок с вашим официальным логотипом FBU
+    # 1. Логотип перемещен в самый верх (Heading) вкладки
     st.markdown("""
     <center>
-        <img src="https://postimg.cc" width="220" style="border-radius:15px; box-shadow: 0 4px 25px rgba(0,112,192,0.4); margin-bottom:20px;">
+        <img src="https://githubusercontent.com" width="180" style="border-radius:12px; box-shadow: 0 4px 20px rgba(0,112,192,0.3); margin-top: 10px; margin-bottom: 25px;">
     </center>
     """, unsafe_allow_html=True)
+    
+    # 2. Основное название платформы и команды под логотипом
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
@@ -135,6 +135,3 @@ with tab4:
 
     with p3:
         with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p><p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p><br></center>", unsafe_allow_html=True)
-
-st.write("---")
