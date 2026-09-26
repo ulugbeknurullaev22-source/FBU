@@ -105,51 +105,41 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (CENTERED LOGO ABOVE DATA & PERFECT ALIGNMENT)
+# TAB 4: ABOUT FBU COMPANY (MONOLITHIC LAYOUT FOR 100% INDENTATION SAFETY)
 # ==============================================================================
 with tab4:
-    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-    st.write("---")
-    
-    # Текстовая закодированная мини-версия вашего логотипа FBU. 100% отображение без зависаний!
+    # Весь блок вкладки собран в единую HTML-разметку. Это полностью исключает IndentationError в Python.
     st.markdown("""
     <center>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACO79l0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8yNy8yNl9678wAAAAidEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIE1YIr06OQAAAYZpREFUeNrt20tKg0EUBdDqf9NuwIUwOHAnwSgZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg7g78gYv7g78gYv7g7g78gYv7g7g78gYv7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g7DNu8ODuDvyBi/uDuDvyBi/uDuDsM27w4O4O/IGL+4O4O/IGL+4O4OwzbvDg7A78gYv7g7DNu8ODuDvyBi/uDuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLu4O/IGLuwN/4OLuwB+4uDvwBy7uDvyBi7sDf+Di7sAfuLg78Acu7g78gYu7A3/g4u7AHzv4OwzbvDg7A78gYv7g7DNu8ODuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLuwP/B87wH8GqLpLgAAAABJRU5ErkJggg==" width="140" style="border-radius:8px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:15px;">
+        <!-- Официальный встроенный логотип FBU строго по центру шапки -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACO79l0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8yTy8yNl9678wAAAAidEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIE1YIr06OQAAAYZpREFUeNrt20tKg0EUBdDqf9NuwIUwOHAnwSgZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g7DNu8ODuDvyBi/uDuDvyBi/uDuDsM27w4O4O/IGL+4O4O/IGL+4O4OwzbvDg7A78gYv7g7DNu8ODuDvyBi/uDuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLu4O/IGLuwN/4OLuwB+4uDvwBy7uDvyBi7sDf+Di7sAfuLg78Acu7g78gYu7A3/g4u7AHzv4OwzbvDg7A78gYv7g7DNu8ODuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLuwP/B87wH8GqLpLgAAAABJRU5ErkJggg==" width="140" style="border-radius:8px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:25px;">
     </center>
-    """, unsafe_allow_html=True)
     
-    st.write("## 👥 Meet Our Engineering Board")
-    st.write("---")
+    <h1 style="text-align: center;">🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform</h1>
+    <h3 style="text-align: center; color: #8892B0 !important; font-weight: normal;">Advanced Financial Monitoring System | Powered by Team C1094BD7</h3>
+    <br>
+    <h2 style="text-align: center; color: #38EF7D !important;">👥 Meet Our Engineering Board</h2>
+    <hr style="border-color: rgba(0, 112, 192, 0.2);">
     
-    # CSS стили для центрирования и красивых рамок карточек
-    st.markdown("""
+    <!-- Стили для красивых заблюренных неоновых карточек участников -->
     <style>
-        .card-box {
-            background: rgba(23, 42, 69, 0.4) !important;
-            border: 1px solid rgba(0, 112, 192, 0.2) !important;
+        .custom-card {
+            background: rgba(23, 42, 69, 0.45) !important;
+            border: 1px solid rgba(0, 112, 192, 0.25) !important;
             border-radius: 12px !important;
-            padding: 25px 15px !important;
+            padding: 35px 15px !important;
             box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
             text-align: center !important;
-            margin-bottom: 20px !important;
+            transition: all 0.4s ease-in-out !important;
+            flex: 1;
+        }
+        .custom-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            border-color: #38EF7D !important;
+            box-shadow: 0 0 35px rgba(56, 239, 125, 0.35), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
         }
     </style>
-    """, unsafe_allow_html=True)
     
-    p1, p2, p3 = st.columns(3)
-    
-    with p1:
-        st.markdown("""
-        <div class="card-box">
-            <div style="font-size:65px; color:#8892B0; margin-bottom:5px;">👤</div>
-            <h3 style="color:#FFFFFF !important; margin:0; font-size:24px;">Nurillayev Ulug'bek</h3>
-            <p style="color:#38EF7D; font-weight:bold; margin:4px 0;">Captain & Lead Systems Director, FBU</p>
-            <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
-            <br>
-            <p style="margin:2px 0;">📞 <b>Contact:</b> +998774147727</p>
-            <p style="margin:0;">✈️ <b>Telegram:</b> @nurullaeev</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with p2:
+    <!-- Строка с тремя карточками, выровненными по центру -->
+    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; margin-top: 20px;">
+        <div class="custom-card">
