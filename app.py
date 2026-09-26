@@ -1,30 +1,45 @@
-import streamlit as st
+import streamlit st
 import pandas as pd
 import plotly.express as px
 
-# Global page configuration
+# Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Injecting clean CSS configurations for custom tab styling
-st.markdown("<style>button[data-baseweb='tab']{color:#8892B0!important;font-size:15px!important;font-weight:600!important;}button[data-baseweb='tab'][aria-selected='true']{color:#0070C0!important;}</style>", unsafe_allow_html=True)
+# Внедрение CSS-стилей: кастомизируем стандартные st.container, добавляем размытие и неоновый glow-эффект при наведении
+st.markdown("""
+<style>
+    /* Настройка стандартного контейнера с рамкой */
+    div[data-testid="stElementContainer"] div[style*="border"] {
+        background: rgba(23, 42, 69, 0.4) !important;
+        border: 1px solid rgba(0, 112, 192, 0.25) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    }
+    
+    /* АНИМАЦИЯ: Эффект парения и неонового свечения при наведении мыши */
+    div[data-testid="stElementContainer"] div[style*="border"]:hover {
+        transform: translateY(-8px) scale(1.01) !important;
+        border-color: #38EF7D !important; /* Рамка становится неоново-зеленой */
+        box-shadow: 0 0 30px rgba(56, 239, 125, 0.35), 0 12px 35px rgba(0, 0, 0, 0.5) !important; /* Зеленое свечение */
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # ==============================================================================
 # APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
 # ==============================================================================
 st.markdown("<center><img src='https://githubusercontent.com' width='180' style='border-radius:12px;box-shadow:0 4px 20px rgba(0,112,192,0.3);margin-top:10px;margin-bottom:15px;pointer-events:none;'></center>", unsafe_allow_html=True)
 
-st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-
-st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
-
-# Generate functional top-level navigation tabs
+# Создание 4 стандартных вкладок навигации в самом верху страницы
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
 # TAB 1: CORE ARCHITECTURE
 # ==============================================================================
 with tab1:
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### Intelligent Threat Filtering Ecosystem")
     st.markdown("In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. Reviewing every alert manually compromises security response times and burns critical human resources. **Our Solution:** We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.")
     st.write("---")
@@ -116,15 +131,22 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT - NO INDENTATION ERRORS)
+# TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
 # ==============================================================================
 with tab4:
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
     p1, p2, p3 = st.columns(3)
     
-    p1.markdown("<center><div style='font-size:75px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nurillayev Ulug'bek</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p></center>", unsafe_allow_html=True)
+    # Репозиторий аватарок участников
+    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
+    
+    with p1:
+        with st.container(border=True):
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
 
-    p2.markdown("<center><div style='font-size:75px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nabijonov Firdavs</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p></center>", unsafe_allow_html=True)
-
+    with p2:
+        with st.container(border=True):
