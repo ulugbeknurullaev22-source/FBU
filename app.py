@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Global page configuration
+# Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# 4 standard navigation tabs at the very top of the webpage (Heading area)
+# 4 стандартных вкладки навигации в самом верху страницы (в области Heading)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -75,7 +75,7 @@ with tab2:
         st.write("### ✈️ Operational Risk Conversion by Medium")
         type_data = pd.DataFrame({'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'], 'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]})
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
+        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
         st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
@@ -101,7 +101,7 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
@@ -109,8 +109,8 @@ with tab3:
 # ==============================================================================
 with tab4:
     # 1. Выравнивание логотипа FBU строго по центру в самом верху (Heading) страницы
-    logo_left, logo_mid, logo_right = st.columns([2, 1, 2])
-    with logo_mid:
+    _, logo_col, _ = st.columns([1, 1, 1])
+    with logo_col:
         st.image("https://githubusercontent.com", use_container_width=True)
     
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
@@ -139,3 +139,4 @@ with tab4:
         with st.container(border=True):
             st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Soxibov Baxtiyorjon</h2>", unsafe_allow_html=True)
             st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Strategic Innovation Head</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: #8892B0; font-size: 14px;'>🎓 Student at Inha University in Tashkent (IUT)</p>", unsafe_allow_html=True)
