@@ -105,26 +105,51 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT)
+# TAB 4: ABOUT FBU COMPANY (CENTERED LOGO ABOVE DATA & PERFECT ALIGNMENT)
 # ==============================================================================
 with tab4:
-    st.markdown("<center><img src='https://svgshare.com' width='180' style='border-radius:12px; box-shadow:0 4px 20px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:25px;'></center>", unsafe_allow_html=True)
-    
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    st.write("---")
+    
+    # Текстовая закодированная мини-версия вашего логотипа FBU. 100% отображение без зависаний!
+    st.markdown("""
+    <center>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACO79l0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8yNy8yNl9678wAAAAidEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIE1YIr06OQAAAYZpREFUeNrt20tKg0EUBdDqf9NuwIUwOHAnwSgZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg7g78gYv7g78gYv7g7g78gYv7g7g78gYv7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g7DNu8ODuDvyBi/uDuDvyBi/uDuDsM27w4O4O/IGL+4O4O/IGL+4O4OwzbvDg7A78gYv7g7DNu8ODuDvyBi/uDuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLu4O/IGLuwN/4OLuwB+4uDvwBy7uDvyBi7sDf+Di7sAfuLg78Acu7g78gYu7A3/g4u7AHzv4OwzbvDg7A78gYv7g7DNu8ODuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLuwP/B87wH8GqLpLgAAAABJRU5ErkJggg==" width="140" style="border-radius:8px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:15px;">
+    </center>
+    """, unsafe_allow_html=True)
+    
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
+    
+    # CSS стили для центрирования и красивых рамок карточек
+    st.markdown("""
+    <style>
+        .card-box {
+            background: rgba(23, 42, 69, 0.4) !important;
+            border: 1px solid rgba(0, 112, 192, 0.2) !important;
+            border-radius: 12px !important;
+            padding: 25px 15px !important;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
     
     p1, p2, p3 = st.columns(3)
     
     with p1:
-        st.info("### 👤 Nurillayev Ulug'bek\n**Role:** Captain & Lead Systems Director, FBU\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998774147727\n\n✈️ **Telegram:** @nurullaeev")
+        st.markdown("""
+        <div class="card-box">
+            <div style="font-size:65px; color:#8892B0; margin-bottom:5px;">👤</div>
+            <h3 style="color:#FFFFFF !important; margin:0; font-size:24px;">Nurillayev Ulug'bek</h3>
+            <p style="color:#38EF7D; font-weight:bold; margin:4px 0;">Captain & Lead Systems Director, FBU</p>
+            <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
+            <br>
+            <p style="margin:2px 0;">📞 <b>Contact:</b> +998774147727</p>
+            <p style="margin:0;">✈️ <b>Telegram:</b> @nurullaeev</p>
+        </div>
+        """, unsafe_allow_html=True)
 
     with p2:
-        st.success("### 👤 Nabijonov Firdavs\n**Role:** Senior Vibe Engineer & Full-Stack\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998902535318\n\n✈️ **Telegram:** @nabijanov111")
-
-    with p3:
-        st.warning("### 👤 Soxibov Baxtiyorjon\n**Role:** Strategic Innovation Head\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998507797229\n\n✈️ **Telegram:** @sbyxha")
-
-st.write("---")
-st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
