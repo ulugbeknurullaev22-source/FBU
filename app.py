@@ -1,12 +1,11 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from images import LOGO_BASE64  # Импортируем наш сохраненный логотип FBU
 
 # Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Внедрение CSS-стилей: настраиваем вкладки и добавляем изолированный эффект свечения при наведении
+# Внедрение CSS-стилей: кастомизируем вкладки и добавляем изолированный эффект свечения при наведении
 st.markdown("""
 <style>
     button[data-baseweb='tab'] {
@@ -42,10 +41,10 @@ st.markdown("""
 # ==============================================================================
 # APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
 # ==============================================================================
-# Логотип выводится из переменной LOGO_BASE64 строго по центру без значка Zoom
-st.markdown(f"""
+# Логотип выводится строго по центру шапки без дурацкого значка Zoom
+st.markdown("""
 <center>
-    <img src="data:image/jpeg;base64,{LOGO_BASE64}" width="160" style="border-radius:12px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:15px; pointer-events:none;">
+    <img src="https://githubusercontent.com" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
 </center>
 """, unsafe_allow_html=True)
 
@@ -54,7 +53,7 @@ st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 
 st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
 
-# Четыре стандартные вкладки
+# Четыре стандартные вкладки навигации под логотипом
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -127,8 +126,6 @@ with tab2:
 # TAB 3: MACHINE LEARNING LOGIC
 # ==============================================================================
 with tab3:
-    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### 🏆 Mathematical Decision Architecture")
     st.write("#### 🎯 Feature Importance Vectors (Top 3 Performance Drivers)")
     
@@ -150,12 +147,30 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ИЗОЛИРОВАННАЯ ЧИСТАЯ СТРУКТУРА)
+# TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
 # ==============================================================================
 with tab4:
-    st.markdown("""
-    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; margin-top: 20px;">
-        <div class="fbu-glow-card">
-            <div style="font-size:75px; color:#8892B0; margin-bottom:10px; line-height:1;">👤</div>
-            <h2 style="margin:0; font-size:28px; color:#FFFFFF;">Nurillayev Ulug'bek</h2>
-            <p style="color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;">Captain & Lead Systems Director, FBU</p>
+    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    st.write("## 👥 Meet Our Engineering Board")
+    st.write("---")
+    
+    p1, p2, p3 = st.columns(3)
+    
+    # Pre-loading localized data representations to prevent compilation breakage
+    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
+    
+    with p1:
+        with st.container(border=True):
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
+
+    with p2:
+        with st.container(border=True):
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p><br></center>", unsafe_allow_html=True)
+
+    with p3:
+        with st.container(border=True):
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p><p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p><br></center>", unsafe_allow_html=True)
+
+st.write("---")
+st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
