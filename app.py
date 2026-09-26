@@ -2,74 +2,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Global page configuration in a dark dashboard layout
+# Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Custom CSS for INHA University Deep Blue style, premium Glassmorphism blur effects, and glowing team cards
+# Внедрение CSS-стилей для интерактивного неонового свечения карточек участников
 st.markdown("""
 <style>
-    /* Main background and global text styling */
-    .stApp {
-        background: linear-gradient(135deg, #0A192F 0%, #172A45 100%) !important;
-        color: #F8F9FA !important;
-    }
-    
-    /* Header typography styles */
-    h1 {
-        color: #0070C0 !important; /* Inha University Blue */
-        font-weight: 800 !important;
-        text-shadow: 0px 0px 20px rgba(0, 112, 192, 0.4);
-    }
-    h2, h3 {
-        color: #38EF7D !important; /* Neon Green accent */
-        font-weight: 600 !important;
-    }
-    
-    /* Glassmorphism card effect (blurred background and subtle borders) */
-    div[data-testid="stMetric"] {
-        background: rgba(23, 42, 69, 0.4) !important;
-        backdrop-filter: blur(12px) opacity(1) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        border: 1px solid rgba(0, 112, 192, 0.25) !important;
-        border-radius: 16px !important;
-        padding: 20px 25px !important;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
-        transition: all 0.3s ease-in-out !important;
-    }
-    
-    /* Interactive glowing hover effect for metric containers */
-    div[data-testid="stMetric"]:hover {
-        transform: translateY(-5px) !important;
-        border-color: #0070C0 !important;
-        box-shadow: 0 12px 40px 0 rgba(0, 112, 192, 0.4) !important;
-    }
-    
-    /* Custom tabs navigation styling */
-    button[data-baseweb="tab"] {
-        color: #8892B0 !important;
-        font-size: 16px !important;
-        font-weight: 600 !important;
-        border-bottom: 2px solid transparent !important;
-        transition: all 0.3s !important;
-    }
-    button[data-baseweb="tab"][aria-selected="true"] {
-        color: #0070C0 !important;
-        border-bottom-color: #0070C0 !important;
-        font-size: 18px !important;
-    }
-    
-    /* Dropdown container styling (Expander) */
-    .streamlit-expanderHeader {
-        background-color: rgba(23, 42, 69, 0.6) !important;
-        border: 1px solid rgba(0, 112, 192, 0.2) !important;
-        border-radius: 8px !important;
-        color: #F8F9FA !important;
-    }
-
-    /* CUSTOM TEAM CARDS WITH INTENSE NEON GLOW EFFECTS */
     .team-card {
         background: rgba(23, 42, 69, 0.5) !important;
-        backdrop-filter: blur(15px) !important;
         border: 1px solid rgba(0, 112, 192, 0.3) !important;
         border-radius: 16px !important;
         padding: 25px !important;
@@ -77,29 +17,25 @@ st.markdown("""
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
         margin-bottom: 20px !important;
     }
-    
     .team-card:hover {
         transform: translateY(-8px) scale(1.02) !important;
-        border-color: #38EF7D !important; /* Glow changes to green accent on selection */
+        border-color: #38EF7D !important;
         box-shadow: 0 0 35px rgba(56, 239, 125, 0.4), 0 10px 40px rgba(0, 0, 0, 0.6) !important;
     }
-    
     .team-name {
         font-size: 22px !important;
         font-weight: 700 !important;
         color: #FFFFFF !important;
         margin-bottom: 5px !important;
     }
-    
     .team-role {
         font-size: 14px !important;
         color: #38EF7D !important;
         font-weight: 600 !important;
         text-transform: uppercase !important;
-        margin-bottom: 15px !important;
         letter-spacing: 1px;
+        margin-bottom: 15px !important;
     }
-    
     .team-info {
         font-size: 15px !important;
         color: #CDD6F4 !important;
@@ -108,7 +44,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Application Banner Section
+# Главный баннер проекта
 st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
 st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 
@@ -119,8 +55,8 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Generate 3 functional tabs for streamlined navigation
-tab1, tab2, tab3 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic"])
+# Создание 4 стандартных вкладок сверху страницы (About FBU теперь в меню heading!)
+tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
 # TAB 1: CORE ARCHITECTURE
@@ -133,37 +69,28 @@ with tab1:
 
     **Our Solution:** 
     We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. 
-    By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score. 
-    Analysts no longer search blindly; they address highest-probability threats first.
+    By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.
     """)
 
     st.write("---")
     st.write("### 🔍 Feature Engineering & Behavioral Pillars")
-    st.markdown("Expand the technical nodes below to inspect how the AI decodes raw transaction records:")
-
+    
     col1, col2, col3 = st.columns(3)
     with col1:
         with st.expander("💸 1. Capital Velocity & Drainage"):
-            st.write("""
-            **Algorithmic Trigger:** Rapid fund rotation. If an account receives a major credit placement (Kirim) and mirrors it via multiple outbound transfers (Chiqim) within a tight time-window, the AI flags classic money-laundering transit behavior.
-            """)
+            st.write("Rapid fund rotation. If an account receives a major credit placement (Kirim) and mirrors it via multiple outbound transfers (Chiqim) within a tight time-window, the AI flags classic money-laundering transit behavior.")
     with col2:
         with st.expander("🌍 2. Cross-Border Channel Friction"):
-            st.write("""
-            **Algorithmic Trigger:** Sudden geographical shifts. When historical spending patterns rooted heavily in local domestic systems (Tashkent retail) switch instantly to high-volume international wires (Xalqaro), the risk weight mutates to Maximum.
-            """)
+            st.write("Sudden geographical shifts. When historical spending patterns rooted heavily in local domestic systems switch instantly to high-volume international wires (Xalqaro), the risk weight mutates to Maximum.")
     with col3:
         with st.expander("📈 3. Volatility & Deviation Spikes"):
-            st.write("""
-            **Algorithmic Trigger:** Absolute sum mutation. The framework tracks rolling behavioral baselines. A transaction that severely overshoots a customer's standard deviation index triggers immediate automated containment.
-            """)
+            st.write("Absolute sum mutation. The framework tracks rolling behavioral baselines. A transaction that severely overshoots a customer's standard deviation index triggers immediate automated containment.")
 
 # ==============================================================================
 # TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
     st.write("### 📊 Macro-Data Stream Summary")
-    st.markdown("*Hover over the glassmorphic metric cards below to see the interactive depth scaling effect:*")
     
     st.write("#### 📈 Deep Data Processing Volumes")
     c1, c2, c3, c4 = st.columns(4)
@@ -177,7 +104,6 @@ with tab2:
         st.metric(label="Escalated High-Priority Targets", value="7.69%", delta="Verified Risk Signals")
 
     st.write("---")
-    
     st.write("#### 💳 Channel Throughput & Volume Allocation")
     col_a, col_b, col_c, col_d = st.columns(4)
     with col_a:
@@ -190,7 +116,6 @@ with tab2:
         st.metric(label="Interbank Settlements (O'tkazma)", value="156.26M UZS", delta="Standard Corporate Rate")
 
     st.write("---")
-    
     left_col, right_col = st.columns(2)
     with left_col:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
@@ -198,14 +123,8 @@ with tab2:
             'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 
             'Volume': [92.31, 7.69]
         })
-        fig_target = px.pie(target_data, values='Volume', names='Alert Vector', hole=0.5,
-                            color_discrete_sequence=['#172A45', '#0070C0'])
-        fig_target.update_layout(
-            paper_bgcolor='rgba(0,0,0,0)', 
-            plot_bgcolor='rgba(0,0,0,0)', 
-            font_color='#F8F9FA',
-            showlegend=True
-        )
+        fig_target = px.pie(target_data, values='Volume', names='Alert Vector', hole=0.5, color_discrete_sequence=['#172A45', '#0070C0'])
+        fig_target.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA')
         st.plotly_chart(fig_target, use_container_width=True, config={'displayModeBar': False})
 
     with right_col:
@@ -214,12 +133,59 @@ with tab2:
             'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'],
             'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]
         })
-        fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True,
-                          color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0', '#38EF7D'])
-        fig_type.update_layout(
-            paper_bgcolor='rgba(0,0,0,0)', 
-            plot_bgcolor='rgba(0,0,0,0)', 
-            font_color='#F8F9FA',
-            coloraxis_showscale=False,
-            xaxis=dict(showgrid=False, zeroline=False, showline=False),
-        )
+        fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
+        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
+        st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
+
+# ==============================================================================
+# TAB 3: MACHINE LEARNING LOGIC
+# ==============================================================================
+with tab3:
+    st.write("### 🏆 Mathematical Decision Architecture")
+    st.write("#### 🎯 Feature Importance Vectors (Top 3 Performance Drivers)")
+    
+    rf1, rf2, rf3 = st.columns(3)
+    with rf1:
+        st.metric(label="🥇 Peak Single Volume (tx_max)", value="432.50", delta="Primary Splitting Node")
+    with rf2:
+        st.metric(label="🥈 Liquidation Velocity (kirim_ratio)", value="389.12", delta="Flow Balance Node")
+    with rf3:
+        st.metric(label="🥉 Cross-Border Intensity (amt_xalqaro)", value="295.41", delta="Compliance Node")
+
+    st.write("---")
+    st.write("#### Exhaustive Feature Contribution Graph")
+    importance_data = pd.DataFrame({
+        'Mathematical Dimension': ['Max Volume UZS (tx_max)', 'Flow Velocity (kirim_ratio)', 'International Wires UZS (amt_xalqaro)', 'Transaction Density (tx_count)', 'Sigma Volatility UZS (tx_std)', 'Card Aggregate UZS (amt_karta)', 'Temporal Vector (dayofweek)'],
+        'Gain Points': [432.5, 389.1, 295.4, 210.8, 185.3, 112.4, 45.2]
+    }).sort_values(by='Gain Points', ascending=True)
+
+    fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
+    st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
+
+# ==============================================================================
+# TAB 4: ABOUT FBU COMPANY
+# ==============================================================================
+with tab4:
+    st.write("## 👥 Meet Our Engineering Board")
+    st.write("---")
+    
+    p1, p2, p3 = st.columns(3)
+    with p1:
+        st.markdown("""
+        <div class="team-card">
+            <div class="team-name">Nurillayev Ulug'bek</div>
+            <div class="team-role">Captain & Lead Systems Director, FBU</div>
+            <div class="team-info">
+                🎓 Student at <strong>Inha University in Tashkent (IUT)</strong>.<br>
+                Directing global operational pipelines and core business logical structure.<br><br>
+                📞 <strong>Contact:</strong> +998774147727<br>
+                ✈️ <strong>Telegram:</strong> <a href="https://t.me" style="color:#38EF7D; text-decoration:none;">@nurullaeev</a>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with p2:
+        st.markdown("""
+        <div class="team-card">
+            <div class="team-name">Nabijonov Firdavs</div>
