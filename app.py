@@ -101,7 +101,7 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
@@ -143,10 +143,16 @@ with tab4:
     </style>
     """, unsafe_allow_html=True)
     
-    p1, p2, p3 = st.columns(3)
-    avatar_html = "<div style='font-size:75px; color:#8892B0; margin-bottom:10px; line-height:1;'>👤</div>"
-    
-    with p1:
-        st.markdown('<div class="custom-card">' + avatar_html + "<h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:5px; margin-bottom:5px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:5px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p></div>", unsafe_allow_html=True)
-
-    with p2:
+    # Сборка карточек через одну HTML структуру для исключения IndentationError
+    st.markdown("""
+    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%;">
+        <div class="custom-card" style="flex: 1;">
+            <div style="font-size:75px; color:#8892B0; margin-bottom:10px; line-height:1;">👤</div>
+            <h2 style="margin:0; font-size:26px; color:#FFFFFF;">Nurillayev Ulug'bek</h2>
+            <p style="color:#38EF7D; font-weight:bold; font-size:15px; margin-top:5px; margin-bottom:5px;">Captain & Lead Systems Director, FBU</p>
+            <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
+            <br>
+            <p style="margin-top:5px; margin-bottom:5px;">📞 <b>Contact:</b> +998774147727</p>
+            <p style="margin:0;">✈️ <b>Telegram:</b> @nurullaeev</p>
+        </div>
+        <div class="custom-card" style="flex: 1;">
