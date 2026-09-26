@@ -126,14 +126,14 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ФИНАЛЬНОЕ СВЕЧЕНИЕ, ТЕКСТ ПО ЦЕНТРУ И ЛОГОТИП БЕЗ ЗУМА)
+# TAB 4: ABOUT FBU COMPANY (ФИНАЛЬНОЕ СВЕЧЕНИЕ, ТЕКСТ ПО ЦЕНТРУ И ЛОГОТИП С GITHUB)
 # ==============================================================================
 with tab4:
-    # Логотип вшит прямо в код в ультра-сжатом формате WebP. Встаёт строго по центру САМЫМ ПЕРВЫМ ЭЛЕМЕНТОМ в Heading
-    # Использование тега <img> полностью отключает значок Zoom / лупу при наведении!
+    # Прямая трансляция логотипа из твоего репозитория GitHub. Использование тега <img> полностью отключает значок Zoom / лупу!
+    # Он расположен строго по центру в самом верху (Heading) вкладки
     st.markdown("""
     <center>
-        <img src="data:image/webp;base64,UklGRmQAAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSBAAAAAB/yH/EP8R/xIAVlA4IDAAAADwAQCdASpAAPwAPpE8mEelIyIhMAgAsBIJaQAA/v8AAf7/AAD+/wAA/v8AAAAA" width="160" style="border-radius:12px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:20px;">
+        <img src="https://githubusercontent.com" width="160" style="border-radius:12px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:20px;">
     </center>
     
     <h1 style="text-align: center;">🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform</h1>
@@ -152,3 +152,4 @@ with tab4:
             <p style="margin:2px 0;">📞 <b>Contact:</b> +998774147727</p>
             <p style="margin:0;">✈️ <b>Telegram:</b> @nurullaeev</p>
         </div>
+        <div class="card-box">
