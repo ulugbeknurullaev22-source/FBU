@@ -2,22 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная настройка страницы
+# Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Безопасный CSS только для кастомизации дефолтных вкладок (не трогает другие блоки)
-st.markdown("""
-<style>
-    button[data-baseweb='tab'] {
-        color: #8892B0 !important;
-        font-size: 15px !important;
-        font-weight: 600 !important;
-    }
-    button[data-baseweb='tab'][aria-selected='true'] {
-        color: #0070C0 !important;
-    }
-</style>
-""", unsafe_allow_html=True)
+# Injecting clean CSS configurations for custom tab styling
+st.markdown("<style>button[data-baseweb='tab']{color:#8892B0!important;font-size:15px!important;font-weight:600!important;}button[data-baseweb='tab'][aria-selected='true']{color:#0070C0!important;}</style>", unsafe_allow_html=True)
 
 # ==============================================================================
 # APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
@@ -97,7 +86,7 @@ with tab2:
         st.write("### ✈️ Operational Risk Conversion by Medium")
         type_data = pd.DataFrame({'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'], 'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]})
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
+        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
         st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
@@ -123,36 +112,26 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ИЗОЛИРОВАННЫЙ СТИЛЬ БЕЗ СБОЕВ ДРУГИХ СТРАНИЦ)
+# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT - NO SYNTAX ERRORS)
 # ==============================================================================
 with tab4:
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
-    # Полностью изолированный HTML-блок. Карточки светятся ТОЛЬКО здесь.
-    # Внутренний код разметки полностью восстановлен и выровнен по середине.
-    st.markdown("""
-    <style>
-        .fbu-card {
-            background: rgba(23, 42, 69, 0.4) !important;
-            border: 1px solid rgba(0, 112, 192, 0.25) !important;
-            border-radius: 16px !important;
-            padding: 35px 20px !important;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
-            text-align: center !important;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-            flex: 1;
-        }
-        .fbu-card:hover {
-            transform: translateY(-8px) scale(1.02) !important;
-            border-color: #38EF7D !important;
-            box-shadow: 0 0 35px rgba(56, 239, 125, 0.4), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
-        }
-    </style>
+    p1, p2, p3 = st.columns(3)
     
-    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; margin-top: 20px;">
-        <div class="fbu-card">
+    with p1:
+        st.info("### 👤 Nurillayev Ulug'bek\n\n**Role:** Captain & Lead Systems Director, FBU\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998774147727\n\n✈️ **Telegram:** @nurullaeev")
+
+    with p2:
+        st.success("### 👤 Nabijonov Firdavs\n\n**Role:** Senior Vibe Engineer & Full-Stack\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998902535318\n\n✈️ **Telegram:** @nabijanov111")
+
+    with p3:
+        st.warning("### 👤 Soxibov Baxtiyorjon\n\n**Role:** Strategic Innovation Head\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998507797229\n\n✈️ **Telegram:** @sbyxha")
+
+st.write("---")
+st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
