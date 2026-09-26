@@ -45,6 +45,8 @@ with tab1:
 # TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### 📊 Macro-Data Stream Summary")
     st.write("#### 📈 Deep Data Processing Volumes")
     
@@ -114,7 +116,7 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ВЕРНУЛИ ЧИСТЫЙ СТАБИЛЬНЫЙ ЦЕНТР)
+# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT - NO INDENTATION ERRORS)
 # ==============================================================================
 with tab4:
     st.write("## 👥 Meet Our Engineering Board")
@@ -122,13 +124,7 @@ with tab4:
     
     p1, p2, p3 = st.columns(3)
     
-    with p1:
-        with st.container(border=True):
-            st.markdown("<center><div style='font-size:65px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nurillayev Ulug'bek</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p></center>", unsafe_allow_html=True)
+    p1.markdown("<center><div style='font-size:75px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nurillayev Ulug'bek</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p></center>", unsafe_allow_html=True)
 
-    with p2:
-        with st.container(border=True):
-            st.markdown("<center><div style='font-size:65px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nabijonov Firdavs</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p></center>", unsafe_allow_html=True)
+    p2.markdown("<center><div style='font-size:75px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nabijonov Firdavs</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p></center>", unsafe_allow_html=True)
 
-    with p3:
-        with st.container(border=True):
