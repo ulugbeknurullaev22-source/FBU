@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная настройка страницы
+# Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Создание 4 стандартных вкладок навигации в самом верху страницы (в области Heading)
+# 4 standard navigation tabs at the very top of the webpage (Heading area)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -119,11 +119,11 @@ with tab3:
     }).sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ОБЛЕГЧЁННАЯ ВЕРСИЯ БЕЗ СБОЕВ)
+# TAB 4: ABOUT FBU COMPANY (CENTERED ALIGNMENT)
 # ==============================================================================
 with tab4:
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
@@ -136,27 +136,38 @@ with tab4:
     
     with p1:
         with st.container(border=True):
-            st.header("Nurillayev Ulug'bek")
-            st.write("**Role:** Captain & Lead Systems Director, FBU")
-            st.caption("🎓 Student at Inha University in Tashkent (IUT)")
-            st.write("📞 **Contact:** +998774147727")
-            st.write("✈️ **Telegram:** @nurullaeev")
+            st.markdown("""
+            <center>
+                <h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2>
+                <p style='color:#38EF7D; font-weight:bold; margin-top:5px; margin-bottom:5px;'>Captain & Lead Systems Director, FBU</p>
+                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+                <p style='margin-top:15px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p>
+                <p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p>
+            </center>
+            """, unsafe_allow_html=True)
 
     with p2:
         with st.container(border=True):
-            st.header("Nabijonov Firdavs")
-            st.write("**Role:** Senior Vibe Engineer & Full-Stack Architecture")
-            st.caption("🎓 Student at Inha University in Tashkent (IUT)")
-            st.write("📞 **Contact:** +998902535318")
-            st.write("✈️ **Telegram:** @nabijanov111")
+            st.markdown("""
+            <center>
+                <h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Nabijonov Firdavs</h2>
+                <p style='color:#38EF7D; font-weight:bold; margin-top:5px; margin-bottom:5px;'>Senior Vibe Engineer & Full-Stack</p>
+                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+                <p style='margin-top:15px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p>
+                <p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p>
+            </center>
+            """, unsafe_allow_html=True)
 
     with p3:
         with st.container(border=True):
-            st.header("Soxibov Baxtiyorjon")
-            st.write("**Role:** Strategic Innovation Head & Infrastructure")
-            st.caption("🎓 Student at Inha University in Tashkent (IUT)")
-            st.write("📞 **Contact:** +998507797229")
-            st.write("✈️ **Telegram:** @sbyxha")
+            st.markdown("""
+            <center>
+                <h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2>
+                <p style='color:#38EF7D; font-weight:bold; margin-top:5px; margin-bottom:5px;'>Strategic Innovation Head</p>
+                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+                <p style='margin-top:15px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p>
+                <p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p>
+            </center>
+            """, unsafe_allow_html=True)
 
 st.write("---")
-st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
