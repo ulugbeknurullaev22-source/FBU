@@ -119,7 +119,7 @@ with tab1:
             """)
 
 # ==============================================================================
-# TAB 2: LIVE METRICS HUB
+# TAB 2: LIVE METRICS HUB (С ПОЛНОСТЬЮ ПРОЗРАЧНЫМИ ГРАФИКАМИ БЕЗ СЕТОК)
 # ==============================================================================
 with tab2:
     st.write("### 📊 Macro-Data Stream Summary")
@@ -156,12 +156,20 @@ with tab2:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
         target_data = pd.DataFrame({
             'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 
-            'Volume': [640700, 53394]
+            'Volume': [640718, 53376]
         })
-        fig_target = px.pie(target_data, values='Volume', names='Alert Vector', 
+        # Делаем стильное кольцо (Donut Chart) вместо обычного пирога
+        fig_target = px.pie(target_data, values='Volume', names='Alert Vector', hole=0.5,
                             color_discrete_sequence=['#172A45', '#0070C0'])
-        fig_target.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA')
-        st.plotly_chart(fig_target, use_container_width=True)
+        
+        # Полное очищение бэкграунда
+        fig_target.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)', 
+            plot_bgcolor='rgba(0,0,0,0)', 
+            font_color='#F8F9FA',
+            showlegend=True
+        )
+        st.plotly_chart(fig_target, use_container_width=True, config={'displayModeBar': False})
 
     with right_col:
         st.write("### ✈️ Operational Risk Conversion by Medium")
@@ -171,8 +179,17 @@ with tab2:
         })
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True,
                           color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0', '#38EF7D'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA')
-        st.plotly_chart(fig_type, use_container_width=True)
+        
+        # Очищаем заднюю часть: убираем сетку (grid), линии осей и делаем фон прозрачным
+        fig_type.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)', 
+            plot_bgcolor='rgba(0,0,0,0)', 
+            font_color='#F8F9FA',
+            coloraxis_showscale=False,
+            xaxis=dict(showgrid=False, zeroline=False, showline=False),
+            yaxis=dict(showgrid=False, zeroline=False, showline=False, visible=False) # Скрываем шкалу Y, так как проценты написаны на барах
+        )
+        st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
 # TAB 3: MACHINE LEARNING LOGIC
@@ -188,14 +205,3 @@ with tab3:
         st.metric(label="Information Gain Weight", value="432.50", delta="Primary Splitting Node")
         st.caption("Sudden massive UZS capital spikes diverge violently from historical retail baselines.")
     with rf2:
-        st.markdown("#### 🥈 Liquidation Velocity (`kirim_ratio`)")
-        st.metric(label="Information Gain Weight", value="389.12", delta="Flow Balance Node")
-        st.caption("Proximity to a 1.0 ratio reveals rapid account drainage, isolating layered mule accounts.")
-    with rf3:
-        st.markdown("#### 🥉 Cross-Border Intensity (`amt_xalqaro`)")
-        st.metric(label="Information Gain Weight", value="295.41", delta="Compliance Node")
-        st.caption("Automated routing adjustments based on international UZS transaction volume classes.")
-
-    st.write("---")
-    st.write("#### Exhaustive Feature Contribution Graph")
-    importance_data = pd.DataFrame({})
