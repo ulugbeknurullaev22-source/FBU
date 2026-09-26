@@ -5,7 +5,7 @@ import plotly.express as px
 # Global page configuration in a dark dashboard layout
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Custom CSS for INHA University Deep Blue style and premium Glassmorphism blur effects
+# Custom CSS for INHA University Deep Blue style, premium Glassmorphism blur effects, and glowing team cards
 st.markdown("""
 <style>
     /* Main background and global text styling */
@@ -65,6 +65,46 @@ st.markdown("""
         border-radius: 8px !important;
         color: #F8F9FA !important;
     }
+
+    /* CUSTOM TEAM CARDS WITH INTENSE NEON GLOW EFFECTS */
+    .team-card {
+        background: rgba(23, 42, 69, 0.5) !important;
+        backdrop-filter: blur(15px) !important;
+        border: 1px solid rgba(0, 112, 192, 0.3) !important;
+        border-radius: 16px !important;
+        padding: 25px !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .team-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        border-color: #38EF7D !important; /* Glow changes to green accent on selection */
+        box-shadow: 0 0 35px rgba(56, 239, 125, 0.4), 0 10px 40px rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    .team-name {
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        color: #FFFFFF !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .team-role {
+        font-size: 14px !important;
+        color: #38EF7D !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 15px !important;
+        letter-spacing: 1px;
+    }
+    
+    .team-info {
+        font-size: 15px !important;
+        color: #CDD6F4 !important;
+        line-height: 1.5 !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -119,7 +159,7 @@ with tab1:
             """)
 
 # ==============================================================================
-# TAB 2: LIVE METRICS HUB (С ПОЛНОСТЬЮ ПРОЗРАЧНЫМИ ГРАФИКАМИ БЕЗ СЕТОК)
+# TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
     st.write("### 📊 Macro-Data Stream Summary")
@@ -158,11 +198,8 @@ with tab2:
             'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 
             'Volume': [640718, 53376]
         })
-        # Делаем стильное кольцо (Donut Chart) вместо обычного пирога
         fig_target = px.pie(target_data, values='Volume', names='Alert Vector', hole=0.5,
                             color_discrete_sequence=['#172A45', '#0070C0'])
-        
-        # Полное очищение бэкграунда
         fig_target.update_layout(
             paper_bgcolor='rgba(0,0,0,0)', 
             plot_bgcolor='rgba(0,0,0,0)', 
@@ -179,30 +216,9 @@ with tab2:
         })
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True,
                           color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0', '#38EF7D'])
-        
-        # Очищаем заднюю часть: убираем сетку (grid), линии осей и делаем фон прозрачным
         fig_type.update_layout(
             paper_bgcolor='rgba(0,0,0,0)', 
             plot_bgcolor='rgba(0,0,0,0)', 
             font_color='#F8F9FA',
             coloraxis_showscale=False,
             xaxis=dict(showgrid=False, zeroline=False, showline=False),
-            yaxis=dict(showgrid=False, zeroline=False, showline=False, visible=False)
-        )
-        st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
-
-# ==============================================================================
-# TAB 3: MACHINE LEARNING LOGIC
-# ==============================================================================
-with tab3:
-    st.write("### 🏆 Mathematical Decision Architecture")
-    st.markdown("Transparency is vital for modern banking operations. Below is the strict information gain metrics computed by our **LightGBM** core.")
-    
-    st.write("#### 🎯 Feature Importance Vectors (Top 3 Performance Drivers)")
-    rf1, rf2, rf3 = st.columns(3)
-    with rf1:
-        st.markdown("#### 🥇 Peak Single Volume (`tx_max`)")
-        st.metric(label="Information Gain Weight", value="432.50", delta="Primary Splitting Node")
-        st.caption("Sudden massive UZS capital spikes diverge violently from historical retail baselines.")
-    with rf2:
-        st.markdown("#### 🥈 Liquidation Velocity (`kirim_ratio`)")
