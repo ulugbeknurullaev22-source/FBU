@@ -2,10 +2,31 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Global page configuration
+# Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# 4 standard navigation tabs at the very top of the webpage (Heading area)
+# Внедрение CSS-стилей для интерактивного неонового свечения карточек участников
+st.markdown("""
+<style>
+    .card-box {
+        background: rgba(23, 42, 69, 0.4) !important;
+        border: 1px solid rgba(0, 112, 192, 0.2) !important;
+        border-radius: 12px !important;
+        padding: 35px 15px !important;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
+        text-align: center !important;
+        transition: all 0.4s ease-in-out !important;
+        flex: 1;
+    }
+    .card-box:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        border-color: #38EF7D !important;
+        box-shadow: 0 0 35px rgba(56, 239, 125, 0.35), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# 4 стандартных вкладки навигации в самом верху страницы (в области Heading)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -75,7 +96,7 @@ with tab2:
         st.write("### ✈️ Operational Risk Conversion by Medium")
         type_data = pd.DataFrame({'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'], 'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]})
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
+        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
         st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
@@ -101,33 +122,33 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT)
+# TAB 4: ABOUT FBU COMPANY (ФИНАЛЬНОЕ СВЕЧЕНИЕ, ТЕКСТ ПО ЦЕНТРУ И ЛОГОТИП БЕЗ ЗУМА)
 # ==============================================================================
 with tab4:
-    # Использование нативного st.image для 100% стабильного отображения по центру
-    _, logo_col, _ = st.columns([2, 1, 2])
-    with logo_col:
-        st.image("https://svgshare.com", width=180, use_container_width=False)
+    # Логотип вшит прямо в код в ультра-сжатом формате WebP. Встаёт строго по центру САМЫМ ПЕРВЫМ ЭЛЕМЕНТОМ в Heading
+    # Использование тега <img> полностью отключает значок Zoom / лупу при наведении!
+    st.markdown("""
+    <center>
+        <img src="data:image/webp;base64,UklGRmQAAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSBAAAAAB/yH/EP8R/xIAVlA4IDAAAADwAQCdASpAAPwAPpE8mEelIyIhMAgAsBIJaQAA/v8AAf7/AAD+/wAA/v8AAAAA" width="160" style="border-radius:12px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:20px;">
+    </center>
     
-    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-    st.write("## 👥 Meet Our Engineering Board")
-    st.write("---")
+    <h1 style="text-align: center;">🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform</h1>
+    <h3 style="text-align: center; color: #8892B0 !important; font-weight: normal;">Advanced Financial Monitoring System | Powered by Team C1094BD7</h3>
+    <br>
+    <h2 style="text-align: center; color: #38EF7D !important;">👥 Meet Our Engineering Board</h2>
+    <hr style="border-color: rgba(0, 112, 192, 0.2);">
     
-    p1, p2, p3 = st.columns(3)
-    
-    with p1:
-        st.info("### 👤 Nurillayev Ulug'bek\n**Role:** Captain & Lead Systems Director, FBU\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998774147727\n\n✈️ **Telegram:** @nurullaeev")
-
-    with p2:
-        st.success("### 👤 Nabijonov Firdavs\n**Role:** Senior Vibe Engineer & Full-Stack\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998902535318\n\n✈️ **Telegram:** @nabijanov111")
-
-    with p3:
-        st.warning("### 👤 Soxibov Baxtiyorjon\n**Role:** Strategic Innovation Head\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998507797229\n\n✈️ **Telegram:** @sbyxha")
-
-st.write("---")
-st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
+    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; margin-top: 20px;">
+        <div class="card-box">
+            <div style="font-size:65px; color:#8892B0; margin-bottom:5px;">👤</div>
+            <h3 style="color:#FFFFFF !important; margin:0; font-size:24px;">Nurillayev Ulug'bek</h3>
+            <p style="color:#38EF7D; font-weight:bold; margin:6px 0;">Captain & Lead Systems Director, FBU</p>
+            <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
+            <br>
+            <p style="margin:2px 0;">📞 <b>Contact:</b> +998774147727</p>
+            <p style="margin:0;">✈️ <b>Telegram:</b> @nurullaeev</p>
+        </div>
