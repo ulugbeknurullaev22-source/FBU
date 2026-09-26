@@ -86,7 +86,7 @@ with tab2:
         st.write("### ✈️ Operational Risk Conversion by Medium")
         type_data = pd.DataFrame({'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'], 'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]})
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
+        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
         st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
@@ -112,7 +112,7 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
