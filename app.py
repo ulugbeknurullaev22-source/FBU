@@ -14,32 +14,13 @@ st.markdown("""
         border-radius: 16px !important;
         padding: 25px !important;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        transition: all 0.4s ease-in-out !important;
         margin-bottom: 20px !important;
     }
     .team-card:hover {
         transform: translateY(-8px) scale(1.02) !important;
         border-color: #38EF7D !important;
         box-shadow: 0 0 35px rgba(56, 239, 125, 0.4), 0 10px 40px rgba(0, 0, 0, 0.6) !important;
-    }
-    .team-name {
-        font-size: 22px !important;
-        font-weight: 700 !important;
-        color: #FFFFFF !important;
-        margin-bottom: 5px !important;
-    }
-    .team-role {
-        font-size: 14px !important;
-        color: #38EF7D !important;
-        font-weight: 600 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px;
-        margin-bottom: 15px !important;
-    }
-    .team-info {
-        font-size: 15px !important;
-        color: #CDD6F4 !important;
-        line-height: 1.5 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -48,14 +29,7 @@ st.markdown("""
 st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
 st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 
-st.markdown("""
-<div style="background: rgba(0, 112, 192, 0.1); border-left: 4px solid #0070C0; padding: 15px; border-radius: 4px; margin-bottom: 25px;">
-    <strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. 
-    Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.
-</div>
-""", unsafe_allow_html=True)
-
-# Создание 4 стандартных вкладок сверху страницы (About FBU теперь в меню heading!)
+# Создание 4 стандартных вкладок сверху страницы
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -174,18 +148,43 @@ with tab4:
     with p1:
         st.markdown("""
         <div class="team-card">
-            <div class="team-name">Nurillayev Ulug'bek</div>
-            <div class="team-role">Captain & Lead Systems Director, FBU</div>
-            <div class="team-info">
-                🎓 Student at <strong>Inha University in Tashkent (IUT)</strong>.<br>
-                Directing global operational pipelines and core business logical structure.<br><br>
-                📞 <strong>Contact:</strong> +998774147727<br>
-                ✈️ <strong>Telegram:</strong> <a href="https://t.me" style="color:#38EF7D; text-decoration:none;">@nurullaeev</a>
-            </div>
+            <h3 style='color:#FFFFFF !important; margin:0;'>Nurillayev Ulug'bek</h3>
+            <p style='color:#38EF7D; font-weight:bold; margin:0;'>Captain & Lead Systems Director, FBU</p>
+            <p style='color:#CDD6F4; font-size:14px;'>
+                🎓 Student at Inha University in Tashkent (IUT).<br>
+                Directing global operational pipelines.<br><br>
+                📞 <b>Contact:</b> +998774147727<br>
+                ✈️ <b>Telegram:</b> @nurullaeev
+            </p>
         </div>
         """, unsafe_allow_html=True)
 
     with p2:
         st.markdown("""
         <div class="team-card">
-            <div class="team-name">Nabijonov Firdavs</div>
+            <h3 style='color:#FFFFFF !important; margin:0;'>Nabijonov Firdavs</h3>
+            <p style='color:#38EF7D; font-weight:bold; margin:0;'>Senior Vibe Engineer</p>
+            <p style='color:#CDD6F4; font-size:14px;'>
+                🎓 Student at Inha University in Tashkent (IUT).<br>
+                Deep specialist in elite vibe full-stack coding.<br><br>
+                📞 <b>Contact:</b> +998902535318<br>
+                ✈️ <b>Telegram:</b> @nabijanov111
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with p3:
+        st.markdown("""
+        <div class="team-card">
+            <h3 style='color:#FFFFFF !important; margin:0;'>Soxibov Baxtiyorjon</h3>
+            <p style='color:#38EF7D; font-weight:bold; margin:0;'>Strategic Innovation Head</p>
+            <p style='color:#CDD6F4; font-size:14px;'>
+                🎓 Student at Inha University in Tashkent (IUT).<br>
+                Driving progressive startup architectures.<br><br>
+                📞 <b>Contact:</b> +998507797229<br>
+                ✈️ <strong>Telegram:</strong> @sbyxha
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+st.write("---")
