@@ -187,7 +187,7 @@ with tab2:
             font_color='#F8F9FA',
             coloraxis_showscale=False,
             xaxis=dict(showgrid=False, zeroline=False, showline=False),
-            yaxis=dict(showgrid=False, zeroline=False, showline=False, visible=False) # Скрываем шкалу Y, так как проценты написаны на барах
+            yaxis=dict(showgrid=False, zeroline=False, showline=False, visible=False)
         )
         st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
@@ -205,3 +205,4 @@ with tab3:
         st.metric(label="Information Gain Weight", value="432.50", delta="Primary Splitting Node")
         st.caption("Sudden massive UZS capital spikes diverge violently from historical retail baselines.")
     with rf2:
+        st.markdown("#### 🥈 Liquidation Velocity (`kirim_ratio`)")
