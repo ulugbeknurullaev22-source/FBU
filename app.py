@@ -2,31 +2,18 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Injecting clean CSS configurations for custom tab styling
-st.markdown("<style>button[data-baseweb='tab']{color:#8892B0!important;font-size:15px!important;font-weight:600!important;}button[data-baseweb='tab'][aria-selected='true']{color:#0070C0!important;}</style>", unsafe_allow_html=True)
-
-# ==============================================================================
-# APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
-# ==============================================================================
-st.markdown("<center><img src='https://githubusercontent.com' width='180' style='border-radius:12px;box-shadow:0 4px 20px rgba(0,112,192,0.3);margin-top:10px;margin-bottom:15px;pointer-events:none;'></center>", unsafe_allow_html=True)
-
-st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-
-st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
-
-# Generate functional top-level navigation tabs
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
 # TAB 1: CORE ARCHITECTURE
 # ==============================================================================
 with tab1:
+    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### Intelligent Threat Filtering Ecosystem")
-    st.markdown("In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. Reviewing every alert manually compromises security response times and burns critical human resources. **Our Solution:** We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.")
+    st.markdown("In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. Reviewing every alert manually compromises security response times and burns critical human resources. Our Solution: We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.")
     st.write("---")
     st.write("### 🔍 Feature Engineering & Behavioral Pillars")
     
@@ -45,7 +32,7 @@ with tab1:
 # TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
-    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### 📊 Macro-Data Stream Summary")
     st.write("#### 📈 Deep Data Processing Volumes")
@@ -72,8 +59,7 @@ with tab2:
         st.metric(label="Cash Dispersals (Naqd)", value="85.08M UZS", delta="Minimal Risk Footprint")
     with col_d:
         st.metric(label="Interbank Settlements (O'tkazma)", value="156.26M UZS", delta="Standard Corporate Rate")
-
-    st.write("---")
+        st.write("---")
     left_col, right_col = st.columns(2)
     with left_col:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
@@ -86,14 +72,14 @@ with tab2:
         st.write("### ✈️ Operational Risk Conversion by Medium")
         type_data = pd.DataFrame({'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'], 'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]})
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
+        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
         st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
 # TAB 3: MACHINE LEARNING LOGIC
 # ==============================================================================
 with tab3:
-    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### 🏆 Mathematical Decision Architecture")
     st.write("#### 🎯 Feature Importance Vectors (Top 3 Performance Drivers)")
@@ -112,26 +98,33 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
-
-# ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT - NO SYNTAX ERRORS)
+    # ==============================================================================
+# TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
 # ==============================================================================
 with tab4:
+    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
     p1, p2, p3 = st.columns(3)
     
+    # Pre-loading localized data representations to prevent compilation breakage
+    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
+    
     with p1:
-        st.info("### 👤 Nurillayev Ulug'bek\n\n**Role:** Captain & Lead Systems Director, FBU\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998774147727\n\n✈️ **Telegram:** @nurullaeev")
+        with st.container(border=True):
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
 
     with p2:
-        st.success("### 👤 Nabijonov Firdavs\n\n**Role:** Senior Vibe Engineer & Full-Stack\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998902535318\n\n✈️ **Telegram:** @nabijanov111")
+        with st.container(border=True):
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p><br></center>", unsafe_allow_html=True)
 
     with p3:
-        st.warning("### 👤 Soxibov Baxtiyorjon\n\n**Role:** Strategic Innovation Head\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998507797229\n\n✈️ **Telegram:** @sbyxha")
+        with st.container(border=True):
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p><p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p><br></center>", unsafe_allow_html=True)
 
 st.write("---")
 st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
