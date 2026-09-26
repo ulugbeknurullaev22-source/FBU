@@ -105,41 +105,29 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (MONOLITHIC LAYOUT FOR 100% INDENTATION SAFETY)
+# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT)
 # ==============================================================================
 with tab4:
-    # Весь блок вкладки собран в единую HTML-разметку. Это полностью исключает IndentationError в Python.
-    st.markdown("""
-    <center>
-        <!-- Официальный встроенный логотип FBU строго по центру шапки -->
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACO79l0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8yTy8yNl9678wAAAAidEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIE1YIr06OQAAAYZpREFUeNrt20tKg0EUBdDqf9NuwIUwOHAnwSgZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg6gZg7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g78gYv7g7g7DNu8ODuDvyBi/uDuDvyBi/uDuDsM27w4O4O/IGL+4O4O/IGL+4O4OwzbvDg7A78gYv7g7DNu8ODuDvyBi/uDuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLu4O/IGLuwN/4OLuwB+4uDvwBy7uDvyBi7sDf+Di7sAfuLg78Acu7g78gYu7A3/g4u7AHzv4OwzbvDg7A78gYv7g7DNu8ODuDvsNfID9v4O7AHzv4OwzbvDg78Acu7g78gYu7A3/g4u7AH7i4O/AHLuwP/B87wH8GqLpLgAAAABJRU5ErkJggg==" width="140" style="border-radius:8px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:25px;">
-    </center>
+    # Использование нативного st.image для 100% стабильного отображения по центру
+    _, logo_col, _ = st.columns([2, 1, 2])
+    with logo_col:
+        st.image("https://svgshare.com", width=180, use_container_width=False)
     
-    <h1 style="text-align: center;">🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform</h1>
-    <h3 style="text-align: center; color: #8892B0 !important; font-weight: normal;">Advanced Financial Monitoring System | Powered by Team C1094BD7</h3>
-    <br>
-    <h2 style="text-align: center; color: #38EF7D !important;">👥 Meet Our Engineering Board</h2>
-    <hr style="border-color: rgba(0, 112, 192, 0.2);">
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    st.write("## 👥 Meet Our Engineering Board")
+    st.write("---")
     
-    <!-- Стили для красивых заблюренных неоновых карточек участников -->
-    <style>
-        .custom-card {
-            background: rgba(23, 42, 69, 0.45) !important;
-            border: 1px solid rgba(0, 112, 192, 0.25) !important;
-            border-radius: 12px !important;
-            padding: 35px 15px !important;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
-            text-align: center !important;
-            transition: all 0.4s ease-in-out !important;
-            flex: 1;
-        }
-        .custom-card:hover {
-            transform: translateY(-8px) scale(1.02) !important;
-            border-color: #38EF7D !important;
-            box-shadow: 0 0 35px rgba(56, 239, 125, 0.35), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
-        }
-    </style>
+    p1, p2, p3 = st.columns(3)
     
-    <!-- Строка с тремя карточками, выровненными по центру -->
-    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; margin-top: 20px;">
-        <div class="custom-card">
+    with p1:
+        st.info("### 👤 Nurillayev Ulug'bek\n**Role:** Captain & Lead Systems Director, FBU\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998774147727\n\n✈️ **Telegram:** @nurullaeev")
+
+    with p2:
+        st.success("### 👤 Nabijonov Firdavs\n**Role:** Senior Vibe Engineer & Full-Stack\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998902535318\n\n✈️ **Telegram:** @nabijanov111")
+
+    with p3:
+        st.warning("### 👤 Soxibov Baxtiyorjon\n**Role:** Strategic Innovation Head\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998507797229\n\n✈️ **Telegram:** @sbyxha")
+
+st.write("---")
+st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
