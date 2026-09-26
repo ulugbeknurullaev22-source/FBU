@@ -119,11 +119,11 @@ with tab3:
     }).sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (CENTERED ALIGNMENT)
+# TAB 4: ABOUT FBU COMPANY (EXPANDED SHAPE + USER INSTAGRAM AVATARS)
 # ==============================================================================
 with tab4:
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
@@ -138,11 +138,15 @@ with tab4:
         with st.container(border=True):
             st.markdown("""
             <center>
-                <h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2>
-                <p style='color:#38EF7D; font-weight:bold; margin-top:5px; margin-bottom:5px;'>Captain & Lead Systems Director, FBU</p>
+                <br>
+                <div style='font-size: 75px; color: #8892B0; margin-bottom: 10px; line-height: 1;'>👤</div>
+                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2>
+                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p>
                 <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
-                <p style='margin-top:15px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p>
+                <br>
+                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p>
                 <p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p>
+                <br>
             </center>
             """, unsafe_allow_html=True)
 
@@ -150,11 +154,15 @@ with tab4:
         with st.container(border=True):
             st.markdown("""
             <center>
-                <h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Nabijonov Firdavs</h2>
-                <p style='color:#38EF7D; font-weight:bold; margin-top:5px; margin-bottom:5px;'>Senior Vibe Engineer & Full-Stack</p>
+                <br>
+                <div style='font-size: 75px; color: #8892B0; margin-bottom: 10px; line-height: 1;'>👤</div>
+                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2>
+                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p>
                 <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
-                <p style='margin-top:15px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p>
+                <br>
+                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p>
                 <p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p>
+                <br>
             </center>
             """, unsafe_allow_html=True)
 
@@ -162,12 +170,6 @@ with tab4:
         with st.container(border=True):
             st.markdown("""
             <center>
-                <h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2>
-                <p style='color:#38EF7D; font-weight:bold; margin-top:5px; margin-bottom:5px;'>Strategic Innovation Head</p>
-                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
-                <p style='margin-top:15px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p>
-                <p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p>
-            </center>
-            """, unsafe_allow_html=True)
-
-st.write("---")
+                <br>
+                <div style='font-size: 75px; color: #8892B0; margin-bottom: 10px; line-height: 1;'>👤</div>
+                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2>
