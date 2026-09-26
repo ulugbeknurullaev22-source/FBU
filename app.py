@@ -6,42 +6,17 @@ import plotly.express as px
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
 # Injecting clean CSS configurations for custom tab styling
-st.markdown("""
-<style>
-    button[data-baseweb="tab"] {
-        color: #8892B0 !important;
-        font-size: 15px !important;
-        font-weight: 600 !important;
-        border-bottom: 2px solid transparent !important;
-        transition: all 0.3s !important;
-    }
-    button[data-baseweb="tab"][aria-selected="true"] {
-        color: #0070C0 !important;
-        border-bottom-color: #0070C0 !important;
-    }
-</style>
-""", unsafe_allow_html=True)
+st.markdown("<style>button[data-baseweb='tab']{color:#8892B0!important;font-size:15px!important;font-weight:600!important;}button[data-baseweb='tab'][aria-selected='true']{color:#0070C0!important;}</style>", unsafe_allow_html=True)
 
 # ==============================================================================
 # APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
 # ==============================================================================
-st.markdown("""
-<center>
-    <img src="https://githubusercontent.com" 
-         width="180" 
-         style="border-radius:12px; box-shadow:0 4px 20px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:15px; pointer-events:none;">
-</center>
-""", unsafe_allow_html=True)
+st.markdown("<center><img src='https://githubusercontent.com' width='180' style='border-radius:12px;box-shadow:0 4px 20px rgba(0,112,192,0.3);margin-top:10px;margin-bottom:15px;pointer-events:none;'></center>", unsafe_allow_html=True)
 
 st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
 st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 
-st.markdown("""
-<div style="background: rgba(0, 112, 192, 0.1); border-left: 4px solid #0070C0; padding: 15px; border-radius: 4px; margin-bottom: 25px;">
-    <strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. 
-    Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.
-</div>
-""", unsafe_allow_html=True)
+st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
 
 # Generate functional top-level navigation tabs
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
@@ -116,6 +91,8 @@ with tab2:
 # TAB 3: MACHINE LEARNING LOGIC
 # ==============================================================================
 with tab3:
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("### 🏆 Mathematical Decision Architecture")
     st.write("#### 🎯 Feature Importance Vectors (Top 3 Performance Drivers)")
     
@@ -137,23 +114,21 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ВЫРАВНИВАНИЕ ПО СЕРЕДИНЕ, БЕЗ СБОЕВ)
+# TAB 4: ABOUT FBU COMPANY (ВЕРНУЛИ ЧИСТЫЙ СТАБИЛЬНЫЙ ЦЕНТР)
 # ==============================================================================
 with tab4:
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
-    # Сборка карточек участников в одну таблицу без использования вложенных with блоков.
-    # Это на 100% страхует от IndentationError и делает текст строго по центру.
-    st.markdown("""
-    <table style="width:100%; border:none; border-collapse:collapse; background:transparent;">
-        <tr>
-            <td style="width:33%; padding:15px; vertical-align:top;">
-                <div style="background:rgba(23,42,69,0.4); border:1px solid rgba(0,112,192,0.25); border-radius:12px; padding:25px 15px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
-                    <div style="font-size:65px; color:#8892B0; margin-bottom:10px;">👤</div>
-                    <h3 style="color:#FFFFFF; margin:0; font-size:24px;">Nurillayev Ulug'bek</h3>
-                    <p style="color:#38EF7D; font-weight:bold; margin:5px 0;">Captain & Lead Systems Director, FBU</p>
-                    <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
-                    <br>
-                    <p style="margin:3px 0; color:#F8F9FA;">📞 <b>Contact:</b> +998774147727</p>
-                    <p style="margin:0; color:#F8F9FA;">✈️ <b>Telegram:</b> @nurullaeev</p>
+    p1, p2, p3 = st.columns(3)
+    
+    with p1:
+        with st.container(border=True):
+            st.markdown("<center><div style='font-size:65px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nurillayev Ulug'bek</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p></center>", unsafe_allow_html=True)
+
+    with p2:
+        with st.container(border=True):
+            st.markdown("<center><div style='font-size:65px;color:#8892B0;'>👤</div><h3 style='color:#FFFFFF;margin:0;font-size:24px;'>Nabijonov Firdavs</h3><p style='color:#38EF7D;font-weight:bold;margin:5px 0;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0;font-size:14px;margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin:3px 0;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p></center>", unsafe_allow_html=True)
+
+    with p3:
+        with st.container(border=True):
