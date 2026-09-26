@@ -1,4 +1,4 @@
-import streamlit st
+import streamlit as st
 import pandas as pd
 import plotly.express as px
 
@@ -31,7 +31,7 @@ st.markdown("""
 # ==============================================================================
 st.markdown("<center><img src='https://githubusercontent.com' width='180' style='border-radius:12px;box-shadow:0 4px 20px rgba(0,112,192,0.3);margin-top:10px;margin-bottom:15px;pointer-events:none;'></center>", unsafe_allow_html=True)
 
-# Создание 4 стандартных вкладок навигации в самом верху страницы
+# Generate functional top-level navigation tabs
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
