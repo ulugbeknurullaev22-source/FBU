@@ -105,10 +105,10 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (FIXED INDENTATION AND HEADING PLACEMENT)
+# TAB 4: ABOUT FBU COMPANY (CLEAN STRUCTURED DESIGN WITH CENTERED LOGO)
 # ==============================================================================
 with tab4:
-    # Логотип FBU размещен по центру в самом верху (Heading) вкладки
+    # Официальный логотип FBU размещен по центру в самом верху (Heading) вкладки
     st.markdown("""
     <center>
         <img src="https://githubusercontent.com" width="180" style="border-radius:12px; box-shadow: 0 4px 20px rgba(0,112,192,0.3); margin-top: 10px; margin-bottom: 25px;">
@@ -121,15 +121,27 @@ with tab4:
     st.write("---")
     
     p1, p2, p3 = st.columns(3)
-    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
     
     with p1:
-        with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
+        st.header("👤 Nurillayev Ulug'bek")
+        st.write("**Role:** Captain & Lead Systems Director, FBU")
+        st.caption("🎓 Student at Inha University in Tashkent (IUT)")
+        st.write("📞 **Contact:** +998774147727")
+        st.write("✈️ **Telegram:** @nurullaeev")
 
     with p2:
-        with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p><br></center>", unsafe_allow_html=True)
+        st.header("👤 Nabijonov Firdavs")
+        st.write("**Role:** Senior Vibe Engineer & Full-Stack Architecture")
+        st.caption("🎓 Student at Inha University in Tashkent (IUT)")
+        st.write("📞 **Contact:** +998902535318")
+        st.write("✈️ **Telegram:** @nabijanov111")
 
     with p3:
-        with st.container(border=True):
+        st.header("👤 Soxibov Baxtiyorjon")
+        st.write("**Role:** Strategic Innovation Head & Infrastructure")
+        st.caption("🎓 Student at Inha University in Tashkent (IUT)")
+        st.write("📞 **Contact:** +998507797229")
+        st.write("✈️ **Telegram:** @sbyxha")
+
+st.write("---")
+st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
