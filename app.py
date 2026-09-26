@@ -2,31 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная настройка страницы
+# Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Внедрение CSS-стилей для интерактивного неонового свечения карточек участников
-st.markdown("""
-<style>
-    .card-box {
-        background: rgba(23, 42, 69, 0.4) !important;
-        border: 1px solid rgba(0, 112, 192, 0.2) !important;
-        border-radius: 12px !important;
-        padding: 35px 15px !important;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
-        text-align: center !important;
-        transition: all 0.4s ease-in-out !important;
-        flex: 1;
-    }
-    .card-box:hover {
-        transform: translateY(-8px) scale(1.02) !important;
-        border-color: #38EF7D !important;
-        box-shadow: 0 0 35px rgba(56, 239, 125, 0.35), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# 4 стандартных вкладки навигации в самом верху страницы (в области Heading)
+# 4 standard navigation tabs at the very top of the webpage (Heading area)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -122,34 +101,41 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ФИНАЛЬНОЕ СВЕЧЕНИЕ, ТЕКСТ ПО ЦЕНТРУ И ЛОГОТИП С GITHUB)
+# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT WITH NO ZOOM LOGO)
 # ==============================================================================
 with tab4:
-    # Прямая трансляция логотипа из твоего репозитория GitHub. Использование тега <img> полностью отключает значок Zoom / лупу!
-    # Он расположен строго по центру в самом верху (Heading) вкладки
-    st.markdown("""
-    <center>
-        <img src="https://githubusercontent.com" width="160" style="border-radius:12px; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:20px;">
-    </center>
+    # 1. Выравнивание логотипа FBU строго по центру в самом верху (Heading) страницы
+    logo_left, logo_mid, logo_right = st.columns([2, 1, 2])
+    with logo_mid:
+        st.image("https://githubusercontent.com", use_container_width=True)
     
-    <h1 style="text-align: center;">🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform</h1>
-    <h3 style="text-align: center; color: #8892B0 !important; font-weight: normal;">Advanced Financial Monitoring System | Powered by Team C1094BD7</h3>
-    <br>
-    <h2 style="text-align: center; color: #38EF7D !important;">👥 Meet Our Engineering Board</h2>
-    <hr style="border-color: rgba(0, 112, 192, 0.2);">
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    st.write("## 👥 Meet Our Engineering Board")
+    st.write("---")
     
-    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%; margin-top: 20px;">
-        <div class="card-box">
-            <div style="font-size:65px; color:#8892B0; margin-bottom:5px;">👤</div>
-            <h3 style="color:#FFFFFF !important; margin:0; font-size:24px;">Nurillayev Ulug'bek</h3>
-            <p style="color:#38EF7D; font-weight:bold; margin:6px 0;">Captain & Lead Systems Director, FBU</p>
-            <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
-            <br>
-            <p style="margin:2px 0;">📞 <b>Contact:</b> +998774147727</p>
-            <p style="margin:0;">✈️ <b>Telegram:</b> @nurullaeev</p>
-        </div>
-        <div class="card-box">
+    # 2. Нативные карточки участников, центрированные с помощью пустых отступов
+    p1, p2, p3 = st.columns(3)
+    
+    with p1:
+        with st.container(border=True):
+            st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Nurillayev Ulug'bek</h2>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Captain & Lead Systems Director, FBU</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: #8892B0; font-size: 14px;'>🎓 Student at Inha University in Tashkent (IUT)</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; margin-top: 15px;'>📞 <b>Contact:</b> +998774147727<br>✈️ <b>Telegram:</b> @nurullaeev</p>", unsafe_allow_html=True)
+
+    with p2:
+        with st.container(border=True):
+            st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Nabijonov Firdavs</h2>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Senior Vibe Engineer & Full-Stack</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: #8892B0; font-size: 14px;'>🎓 Student at Inha University in Tashkent (IUT)</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; margin-top: 15px;'>📞 <b>Contact:</b> +998902535318<br>✈️ <b>Telegram:</b> @nabijanov111</p>", unsafe_allow_html=True)
+
+    with p3:
+        with st.container(border=True):
+            st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Soxibov Baxtiyorjon</h2>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Strategic Innovation Head</p>", unsafe_allow_html=True)
