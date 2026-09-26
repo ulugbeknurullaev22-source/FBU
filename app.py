@@ -1,4 +1,65 @@
-st.write("---")
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
+
+tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
+
+# ==============================================================================
+# TAB 1: CORE ARCHITECTURE
+# ==============================================================================
+with tab1:
+    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    st.write("### Intelligent Threat Filtering Ecosystem")
+    st.markdown("In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. Reviewing every alert manually compromises security response times and burns critical human resources. Our Solution: We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.")
+    st.write("---")
+    st.write("### 🔍 Feature Engineering & Behavioral Pillars")
+    
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        with st.expander("💸 1. Capital Velocity & Drainage"):
+            st.write("Rapid fund rotation. If an account receives a major credit placement (Kirim) and mirrors it via multiple outbound transfers (Chiqim) within a tight time-window, the AI flags classic money-laundering transit behavior.")
+    with col2:
+        with st.expander("🌍 2. Cross-Border Channel Friction"):
+            st.write("Sudden geographical shifts. When historical spending patterns rooted heavily in local domestic systems switch instantly to high-volume international wires (Xalqaro), the risk weight mutates to Maximum.")
+    with col3:
+        with st.expander("📈 3. Volatility & Deviation Spikes"):
+            st.write("Absolute sum mutation. The framework tracks rolling behavioral baselines. A transaction that severely overshoots a customer's standard deviation index triggers immediate automated containment.")
+
+# ==============================================================================
+# TAB 2: LIVE METRICS HUB
+# ==============================================================================
+with tab2:
+    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    st.write("### 📊 Macro-Data Stream Summary")
+    st.write("#### 📈 Deep Data Processing Volumes")
+    
+    c1, c2, c3, c4 = st.columns(4)
+    with c1:
+        st.metric(label="Total Transaction Records Processed", value="694,094 rows", delta="Train + Test Batches")
+    with c2:
+        st.metric(label="Mean Transaction Amount", value="42.53K UZS", delta="+1.24% Vs Baseline")
+    with c3:
+        st.metric(label="Automated False Alarm Suppression", value="92.31%", delta="Operational Noise Cut", delta_color="inverse")
+    with c4:
+        st.metric(label="Escalated High-Priority Targets", value="7.69%", delta="Verified Risk Signals")
+
+    st.write("---")
+    st.write("#### 💳 Channel Throughput & Volume Allocation")
+    
+    col_a, col_b, col_c, col_d = st.columns(4)
+    with col_a:
+        st.metric(label="International Wires (Xalqaro)", value="142.54M UZS", delta="Critical Exposure Level")
+    with col_b:
+        st.metric(label="Card Operations (Karta)", value="310.21M UZS", delta="Highest Volume Channel")
+    with col_c:
+        st.metric(label="Cash Dispersals (Naqd)", value="85.08M UZS", delta="Minimal Risk Footprint")
+    with col_d:
+        st.metric(label="Interbank Settlements (O'tkazma)", value="156.26M UZS", delta="Standard Corporate Rate")
+        st.write("---")
     left_col, right_col = st.columns(2)
     with left_col:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
@@ -39,9 +100,7 @@ with tab3:
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
     fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
-
-
-# ==============================================================================
+    # ==============================================================================
 # TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
 # ==============================================================================
 with tab4:
