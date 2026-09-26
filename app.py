@@ -198,4 +198,4 @@ with tab3:
 
     st.write("---")
     st.write("#### Exhaustive Feature Contribution Graph")
-    importance_data = pd.DataFrame({
+    importance_data = pd.DataFrame({})
