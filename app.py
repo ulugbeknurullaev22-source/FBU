@@ -44,7 +44,7 @@ st.markdown("""
 # Логотип выводится строго по центру шапки без дурацкого значка Zoom
 st.markdown("""
 <center>
-    <img src="file:///C:/Users/user/Pictures/photo_2026-09-20_18-15-37.jpg" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
+    <img src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000a50481f4bb7077f2b3135b44&ts=497350&p=fs&cid=1&sig=28a8a1ee6ced3f05049da00ebd7bc2c1fd6cac93c56e05fbda20b70bf11ae5eb&v=0" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
 </center>
 """, unsafe_allow_html=True)
 
