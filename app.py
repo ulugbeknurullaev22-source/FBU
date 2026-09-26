@@ -2,30 +2,30 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная конфигурация страницы в стиле темного дашборда
+# Global page configuration with a sleek dark dashboard layout
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# Внедрение кастомного CSS для создания стиля Университета Инха (глубокий синий) и эффекта размытия (Glassmorphism)
+# Custom CSS for Inha University Deep Blue style and premium Glassmorphism blur effects
 st.markdown("""
 <style>
-    /* Главный фон и шрифт */
+    /* Main background and global text styling */
     .stApp {
         background: linear-gradient(135deg, #0A192F 0%, #172A45 100%) !important;
         color: #F8F9FA !important;
     }
     
-    /* Стилизация заголовков */
+    /* Header typography styles */
     h1 {
-        color: #0070C0 !important; /* Фирменный синий цвет Inha */
+        color: #0070C0 !important; /* Inha University Blue */
         font-weight: 800 !important;
         text-shadow: 0px 0px 20px rgba(0, 112, 192, 0.4);
     }
     h2, h3 {
-        color: #38EF7D !important; /* Контрастный неоновый зеленый для акцентов */
+        color: #38EF7D !important; /* Neon Green accent */
         font-weight: 600 !important;
     }
     
-    /* Эффект Glassmorphism (размытие фона и прозрачные карточки) */
+    /* Glassmorphism card effect (blurred background and subtle borders) */
     div[data-testid="stMetric"] {
         background: rgba(23, 42, 69, 0.4) !important;
         backdrop-filter: blur(12px) opacity(1) !important;
@@ -37,14 +37,14 @@ st.markdown("""
         transition: all 0.3s ease-in-out !important;
     }
     
-    /* Эффект свечения при наведении на метрики */
+    /* Interactive glowing hover effect for metric containers */
     div[data-testid="stMetric"]:hover {
         transform: translateY(-5px) !important;
         border-color: #0070C0 !important;
         box-shadow: 0 12px 40px 0 rgba(0, 112, 192, 0.4) !important;
     }
     
-    /* Кастомизация вкладок (Tabs) */
+    /* Custom tabs navigation styling */
     button[data-baseweb="tab"] {
         color: #8892B0 !important;
         font-size: 16px !important;
@@ -58,7 +58,7 @@ st.markdown("""
         font-size: 18px !important;
     }
     
-    /* Стилизация раскрывающихся карточек (Expander) */
+    /* Dropdown container styling (Expander) */
     .streamlit-expanderHeader {
         background-color: rgba(23, 42, 69, 0.6) !important;
         border: 1px solid rgba(0, 112, 192, 0.2) !important;
@@ -68,7 +68,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Шапка сайта
+# Application Banner Section
 st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
 st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 
@@ -79,7 +79,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Создание 3 интерактивных вкладок
+# Generate 3 functional tabs for streamlined navigation
 tab1, tab2, tab3 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic"])
 
 # ==============================================================================
@@ -119,7 +119,7 @@ with tab1:
             """)
 
 # ==============================================================================
-# TAB 2: LIVE METRICS HUB (МЕТРИКИ С ЭФФЕКТОМ BLUR)
+# TAB 2: LIVE METRICS HUB (GLASSMORPHIC CARDS)
 # ==============================================================================
 with tab2:
     st.write("### 📊 Macro-Data Stream Summary")
@@ -151,13 +151,13 @@ with tab2:
 
     st.write("---")
     
-    # Распределения графиков в темной неоновой гамме
+    # Graphs layout in deep neon palettes
     left_col, right_col = st.columns(2)
     with left_col:
         st.write("### 🚨 The Imbalance Dilemma (Target Distribution)")
         target_data = pd.DataFrame({
             'Alert Vector': ['False Alarm (Dismissed)', 'Genuine Threat (Escalated)'], 
-            'Volume': [640700, 53394]
+            'Volume': [32000, 2694]
         })
         fig_target = px.pie(target_data, values='Volume', names='Alert Vector', 
                             color_discrete_sequence=['#172A45', '#0070C0'])
@@ -199,4 +199,3 @@ with tab3:
 
     st.write("---")
     st.write("#### Exhaustive Feature Contribution Graph")
-    importance_data = pd.DataFrame({
