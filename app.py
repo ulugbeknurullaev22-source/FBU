@@ -105,54 +105,26 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY
+# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT)
 # ==============================================================================
 with tab4:
-    # Официальный стабильный линк на логотип FBU строго по центру в самом верху (Heading) вкладки
-    st.markdown("""
-    <center>
-        <img src="https://svgshare.com" width="180" style="border-radius:12px; box-shadow:0 4px 20px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:25px;">
-    </center>
-    """, unsafe_allow_html=True)
+    st.markdown("<center><img src='https://svgshare.com' width='180' style='border-radius:12px; box-shadow:0 4px 20px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:25px;'></center>", unsafe_allow_html=True)
     
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
-    # CSS-стили для заблюренных парящих карточек участников
-    st.markdown("""
-    <style>
-        .custom-card {
-            background: rgba(23, 42, 69, 0.45) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
-            border: 1px solid rgba(0, 112, 192, 0.25) !important;
-            border-radius: 16px !important;
-            padding: 35px 20px !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-            transition: all 0.4s ease-in-out !important;
-            text-align: center !important;
-            margin-bottom: 25px !important;
-        }
-        .custom-card:hover {
-            transform: translateY(-8px) scale(1.02) !important;
-            border-color: #38EF7D !important;
-            box-shadow: 0 0 35px rgba(56, 239, 125, 0.35), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
-        }
-    </style>
-    """, unsafe_allow_html=True)
+    p1, p2, p3 = st.columns(3)
     
-    # Сборка карточек через одну HTML структуру для исключения IndentationError
-    st.markdown("""
-    <div style="display: flex; gap: 20px; justify-content: space-between; width: 100%;">
-        <div class="custom-card" style="flex: 1;">
-            <div style="font-size:75px; color:#8892B0; margin-bottom:10px; line-height:1;">👤</div>
-            <h2 style="margin:0; font-size:26px; color:#FFFFFF;">Nurillayev Ulug'bek</h2>
-            <p style="color:#38EF7D; font-weight:bold; font-size:15px; margin-top:5px; margin-bottom:5px;">Captain & Lead Systems Director, FBU</p>
-            <p style="color:#8892B0; font-size:14px; margin:0;">🎓 Student at Inha University in Tashkent (IUT)</p>
-            <br>
-            <p style="margin-top:5px; margin-bottom:5px;">📞 <b>Contact:</b> +998774147727</p>
-            <p style="margin:0;">✈️ <b>Telegram:</b> @nurullaeev</p>
-        </div>
-        <div class="custom-card" style="flex: 1;">
+    with p1:
+        st.info("### 👤 Nurillayev Ulug'bek\n**Role:** Captain & Lead Systems Director, FBU\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998774147727\n\n✈️ **Telegram:** @nurullaeev")
+
+    with p2:
+        st.success("### 👤 Nabijonov Firdavs\n**Role:** Senior Vibe Engineer & Full-Stack\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998902535318\n\n✈️ **Telegram:** @nabijanov111")
+
+    with p3:
+        st.warning("### 👤 Soxibov Baxtiyorjon\n**Role:** Strategic Innovation Head\n\n🎓 Student at Inha University in Tashkent (IUT)\n\n📞 **Contact:** +998507797229\n\n✈️ **Telegram:** @sbyxha")
+
+st.write("---")
+st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
