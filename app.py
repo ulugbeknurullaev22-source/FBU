@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная настройка страницы
+# Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# 4 стандартных вкладки навигации в самом верху страницы (в области Heading)
+# 4 standard navigation tabs at the very top of the webpage (Heading area)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -101,13 +101,52 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), visible=False, yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (ВЕРНУЛИ СВЕЧЕНИЕ, РАМКИ И СОВЕРШЕННОЕ ЦЕНТРИРОВАНИЕ)
+# TAB 4: ABOUT FBU COMPANY
 # ==============================================================================
 with tab4:
-    # 1. Логотип вшит прямо в код через Base64 (больше никаких внешних ссылок и зависаний загрузки!)
+    # Официальный стабильный линк на логотип FBU строго по центру в самом верху (Heading) вкладки
     st.markdown("""
     <center>
+        <img src="https://svgshare.com" width="180" style="border-radius:12px; box-shadow:0 4px 20px rgba(0,112,192,0.3); margin-top:10px; margin-bottom:25px;">
+    </center>
+    """, unsafe_allow_html=True)
+    
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    st.write("## 👥 Meet Our Engineering Board")
+    st.write("---")
+    
+    # CSS-стили для заблюренных парящих карточек участников
+    st.markdown("""
+    <style>
+        .custom-card {
+            background: rgba(23, 42, 69, 0.45) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(0, 112, 192, 0.25) !important;
+            border-radius: 16px !important;
+            padding: 35px 20px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+            transition: all 0.4s ease-in-out !important;
+            text-align: center !important;
+            margin-bottom: 25px !important;
+        }
+        .custom-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            border-color: #38EF7D !important;
+            box-shadow: 0 0 35px rgba(56, 239, 125, 0.35), 0 15px 40px rgba(0, 0, 0, 0.6) !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    p1, p2, p3 = st.columns(3)
+    avatar_html = "<div style='font-size:75px; color:#8892B0; margin-bottom:10px; line-height:1;'>👤</div>"
+    
+    with p1:
+        st.markdown('<div class="custom-card">' + avatar_html + "<h2 style='margin:0; font-size:26px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:5px; margin-bottom:5px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:5px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p></div>", unsafe_allow_html=True)
+
+    with p2:
