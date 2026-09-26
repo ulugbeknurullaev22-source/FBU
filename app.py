@@ -25,17 +25,17 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Главный баннер проекта
-st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
-st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-
-# Создание 4 стандартных вкладок сверху страницы
+# ШАГ 1: Создание 4 стандартных вкладок навигации в самом верху страницы (в области Heading)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
 # TAB 1: CORE ARCHITECTURE
 # ==============================================================================
 with tab1:
+    # Главный баннер проекта внутри вкладки
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    
     st.write("### Intelligent Threat Filtering Ecosystem")
     st.markdown("""
     In high-volume banking sectors, compliance departments face **an informational avalanche** — hundreds of thousands of daily automated system flags. 
@@ -64,6 +64,10 @@ with tab1:
 # TAB 2: LIVE METRICS HUB
 # ==============================================================================
 with tab2:
+    # Главный баннер проекта внутри вкладки
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    
     st.write("### 📊 Macro-Data Stream Summary")
     
     st.write("#### 📈 Deep Data Processing Volumes")
@@ -115,6 +119,10 @@ with tab2:
 # TAB 3: MACHINE LEARNING LOGIC
 # ==============================================================================
 with tab3:
+    # Главный баннер проекта внутри вкладки
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    
     st.write("### 🏆 Mathematical Decision Architecture")
     st.write("#### 🎯 Feature Importance Vectors (Top 3 Performance Drivers)")
     
@@ -134,13 +142,17 @@ with tab3:
     }).sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
 # TAB 4: ABOUT FBU COMPANY
 # ==============================================================================
 with tab4:
+    # Главный баннер проекта внутри вкладки о компании
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
@@ -171,20 +183,3 @@ with tab4:
                 ✈️ <b>Telegram:</b> @nabijanov111
             </p>
         </div>
-        """, unsafe_allow_html=True)
-
-    with p3:
-        st.markdown("""
-        <div class="team-card">
-            <h3 style='color:#FFFFFF !important; margin:0;'>Soxibov Baxtiyorjon</h3>
-            <p style='color:#38EF7D; font-weight:bold; margin:0;'>Strategic Innovation Head</p>
-            <p style='color:#CDD6F4; font-size:14px;'>
-                🎓 Student at Inha University in Tashkent (IUT).<br>
-                Driving progressive startup architectures.<br><br>
-                📞 <b>Contact:</b> +998507797229<br>
-                ✈️ <strong>Telegram:</strong> @sbyxha
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-st.write("---")
