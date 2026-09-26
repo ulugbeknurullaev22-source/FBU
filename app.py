@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная настройка страницы
+# Global page configuration
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# 4 стандартных вкладки навигации в самом верху страницы (в области Heading)
+# 4 standard navigation tabs at the very top of the webpage (Heading area)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -105,20 +105,18 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (LOGO MOVED TO HEADING REGION AND RENDERED VIA GITHUB)
+# TAB 4: ABOUT FBU COMPANY (FIXED INDENTATION AND HEADING PLACEMENT)
 # ==============================================================================
 with tab4:
-    # 1. Логотип перемещен в самый верх (Heading) вкладки
+    # Логотип FBU размещен по центру в самом верху (Heading) вкладки
     st.markdown("""
     <center>
         <img src="https://githubusercontent.com" width="180" style="border-radius:12px; box-shadow: 0 4px 20px rgba(0,112,192,0.3); margin-top: 10px; margin-bottom: 25px;">
     </center>
     """, unsafe_allow_html=True)
     
-    # 2. Основное название платформы и команды под логотипом
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
-    
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
