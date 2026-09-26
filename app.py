@@ -41,11 +41,6 @@ st.markdown("""
 st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
 st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 
-st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
-
-# Четыре стандартные вкладки навигации под логотипом
-tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
-
 # ==============================================================================
 # APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
 # ==============================================================================
@@ -55,6 +50,13 @@ st.markdown("""
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJd2zRkErePMNxTD0I1H7p9v0sF4MzuHpx8zxgFie1w&s" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
 </center>
 """, unsafe_allow_html=True)
+
+st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
+
+# Четыре стандартные вкладки навигации под логотипом
+tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
+
+
 
 # ==============================================================================
 # TAB 1: CORE ARCHITECTURE
