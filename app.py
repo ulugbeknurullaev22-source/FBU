@@ -2,10 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-# 4 стандартных вкладки навигации в самом верху страницы (в области Heading)
 tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics Hub", "🏆 Machine Learning Logic", "🏢 About FBU"])
 
 # ==============================================================================
@@ -75,7 +73,7 @@ with tab2:
         st.write("### ✈️ Operational Risk Conversion by Medium")
         type_data = pd.DataFrame({'Medium': ['Cards', 'Cash', 'International', 'Bank Transfer'], 'Risk Density (%)': [8.2, 4.1, 38.5, 12.3]})
         fig_type = px.bar(type_data, x='Medium', y='Risk Density (%)', text_auto=True, color='Risk Density (%)', color_continuous_scale=['#172A45', '#0070C0'])
-        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
+        fig_type.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False), yaxis=dict(showgrid=False, visible=False))
         st.plotly_chart(fig_type, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
@@ -101,43 +99,34 @@ with tab3:
     importance_data = importance_data.sort_values(by='Gain Points', ascending=True)
 
     fig_imp = px.bar(importance_data, x='Gain Points', y='Mathematical Dimension', orientation='h', text_auto=True, color='Gain Points', color_continuous_scale=['#172A45', '#0070C0'])
-    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False)
+    fig_imp.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#F8F9FA', coloraxis_showscale=False, xaxis=dict(showgrid=False, visible=False), yaxis=dict(showgrid=False))
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (100% STABLE NATIVE LAYOUT WITH NO ZOOM LOGO)
+# TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
 # ==============================================================================
 with tab4:
-    # 1. Выравнивание логотипа FBU строго по центру в самом верху (Heading) страницы
-    _, logo_col, _ = st.columns([1, 1, 1])
-    with logo_col:
-        st.image("https://githubusercontent.com", use_container_width=True)
-    
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
-    # 2. Нативные карточки участников, центрированные с помощью пустых отступов
     p1, p2, p3 = st.columns(3)
+    
+    # Pre-loading localized data representations to prevent compilation breakage
+    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
     
     with p1:
         with st.container(border=True):
-            st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Nurillayev Ulug'bek</h2>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Captain & Lead Systems Director, FBU</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; color: #8892B0; font-size: 14px;'>🎓 Student at Inha University in Tashkent (IUT)</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; margin-top: 15px;'>📞 <b>Contact:</b> +998774147727<br>✈️ <b>Telegram:</b> @nurullaeev</p>", unsafe_allow_html=True)
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
 
     with p2:
         with st.container(border=True):
-            st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Nabijonov Firdavs</h2>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Senior Vibe Engineer & Full-Stack</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; color: #8892B0; font-size: 14px;'>🎓 Student at Inha University in Tashkent (IUT)</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; margin-top: 15px;'>📞 <b>Contact:</b> +998902535318<br>✈️ <b>Telegram:</b> @nabijanov111</p>", unsafe_allow_html=True)
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p><br></center>", unsafe_allow_html=True)
 
     with p3:
         with st.container(border=True):
-            st.markdown("<h2 style='text-align: center; color: #FFFFFF;'>👤<br>Soxibov Baxtiyorjon</h2>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; color: #38EF7D; font-weight: bold;'>Strategic Innovation Head</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; color: #8892B0; font-size: 14px;'>🎓 Student at Inha University in Tashkent (IUT)</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; margin-top: 15px;'>📞 <b>Contact:</b> +998507797229<br>✈️ <b>Telegram:</b> @sbyxha</p>", unsafe_allow_html=True)
+            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p><p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p><br></center>", unsafe_allow_html=True)
+
+st.write("---")
+st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
