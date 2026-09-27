@@ -56,7 +56,7 @@ try:
         f"""
         <div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">
             <img src="data:image/jpeg;base64,{logo_encoded}" 
-                 style="width: 150px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,112,192,0.3); pointer-events: none;">
+                style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 20px rgba(0,112,192,0.3); pointer-events: none;">
         </div>
         """,
         unsafe_allow_html=True
