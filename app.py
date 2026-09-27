@@ -44,14 +44,11 @@ st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
  # ==============================================================================
 # APPLICATION HEADING - TOP LEVEL BRANDING NODE (СВЕРХУ ПО СЕРЕДИНЕ)
 # ==============================================================================
-# Логотип выводится строго по центру шапки без дурацкого значка Zoom
 
 try:
     with open("logo.jpg", "rb") as f:
-        # Убрана лишняя точка: вместо f.read.() пишем f.read()
         logo_encoded = base64.b64encode(f.read()).decode()
-    
-    # Отображение логотипа строго по центру и без значка Zoom
+
     st.markdown(
         f"""
         <div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">
@@ -62,13 +59,7 @@ try:
         unsafe_allow_html=True
     )
 except FileNotFoundError:
-    # Фолбэк на случай, если файл logo.jpg ещё не загрузился в репозиторий
     st.warning("https://github.com/ulugbeknurullaev22-source/FBU/blob/cbd7e8a26544fdf4cf67a3acaa7bb1ba1c8aba16/logo.jpg")
-# st.markdown("""
-# <center>
-#     <img src="https://github.com/ulugbeknurullaev22-source/FBU/blob/c9f0d640104508e82abd1251ee8c8eb4bc323f32/photo_2026-09-20_18-15-37.jpg" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
-# </center>
-# """, unsafe_allow_html=True)
 
 st.markdown("<div style='background:rgba(0,112,192,0.1);border-left:4px solid #0070C0;padding:15px;border-radius:4px;margin-bottom:25px;'><strong>Global Operational Status:</strong> Standing at the intersection of Big Data and Cybersecurity. Our neural-gradient framework dissects financial transaction patterns in real-time, isolating high-risk threats from millions of safe everyday operations.</div>", unsafe_allow_html=True)
 
@@ -178,7 +169,6 @@ with tab4:
     
     p1, p2, p3 = st.columns(3)
     
-    # Функция для безопасного кодирования фото участников в Base64
     def get_user_photo(filename):
         try:
             with open(filename, "rb") as f:
@@ -186,12 +176,11 @@ with tab4:
         except FileNotFoundError:
             return None
 
-    # Поочередно считываем три фотографии из корня репозитория
+
     photo_u = get_user_photo("ulugbek.jpg")
     photo_f = get_user_photo("firdavs.png")
     photo_b = get_user_photo("baxtiyor.jpg")
 
-    # Базовый шаблон-заглушка на случай, если файл картинки физически отсутствует
     default_avatar = "https://flaticon.com"
 
     with p1:
