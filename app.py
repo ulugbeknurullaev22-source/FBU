@@ -188,7 +188,7 @@ with tab4:
 
     # Поочередно считываем три фотографии из корня репозитория
     photo_u = get_user_photo("ulugbek.jpg")
-    photo_f = get_user_photo("firdavs.jpg")
+    photo_f = get_user_photo("firdavs.png")
     photo_b = get_user_photo("baxtiyor.jpg")
 
     # Базовый шаблон-заглушка на случай, если файл картинки физически отсутствует
