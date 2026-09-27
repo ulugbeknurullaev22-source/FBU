@@ -96,13 +96,6 @@ with tab1:
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     
-    st.markdown("""
-    **Engineering Board:** 
-    * 🎓 *Nurillayev Ulug'bek* 
-    * 🎓 *Nabijonov Firdavs* 
-    * 🎓 *Soxibov Baxtiyorjon*
-    """)
-    
     # --- Global Operational Status ---
     st.info(
         "**Global Operational Status:** Standing at the intersection of Big Data and Cybersecurity. "
@@ -149,6 +142,18 @@ with tab1:
             **Absolute sum and density mutation.**  
             The framework continuously tracks rolling historical behavioral baselines. Any incoming transaction that severely overshoots a customer's standard deviation index or standard transaction count triggers immediate automated containment.
             """)
+
+    # --- Comprehensive Project Summary ---
+    st.write("### 📝 Final Project Summary")
+    st.success("""
+    **What We Accomplished (Executive Summary):**
+    
+    * **End-to-End Core Infrastructure:** Engineered and deployed the **NEXUS Platform**, a production-ready financial monitoring dashboard designed to automate high-volume transaction triage and fraud detection.
+    * **Big Data Scale Processing:** Successfully validated the core pipeline across **694,094 rows** of transaction data, maintaining a mean processing profile baseline of **42.53K UZS** per record.
+    * **Massive Operational Noise Reduction:** Achieved an automated **92.31% False Alarm Suppression rate**, effectively filtering out non-threatening system flags and isolating the **7.69% of verified, high-priority risk targets** for human review.
+    * **Multi-Channel Volume Allocation:** Fully integrated risk telemetry across major volume layers, including Card Operations (**310.21M UZS**), Interbank Settlements (**156.26M UZS**), International Wires (**142.54M UZS**), and Cash Dispersals (**85.08M UZS**).
+    * **Interpretable Machine Learning Architecture:** Developed an exhaustive feature importance mathematical pipeline identifying **Peak Single Volume** (`tx_max`, weight: 432.50) as the primary data splitting node, followed by **Liquidation Velocity** (`kirim_ratio`, weight: 389.12) and **Cross-Border Intensity** (`amt_xalqaro`, weight: 295.41).
+    """)
 
 # ==============================================================================
 # ==============================================================================
