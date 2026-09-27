@@ -45,7 +45,7 @@ st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 # ==============================================================================
 # Логотип выводится строго по центру шапки без дурацкого значка Zoom
 
-with open("logo.jpg","rb") as f;
+with open("logo.jpg","rb") as f:
     logo = base64.b64encode(f.read.()).decode()
 
 st.markdown(
