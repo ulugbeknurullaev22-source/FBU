@@ -60,9 +60,9 @@ try:
         """,
         unsafe_allow_html=True
     )
-#except FileNotFoundError:
+except FileNotFoundError:
     # Фолбэк на случай, если файл logo.jpg ещё не загрузился в репозиторий
- #   st.warning("Файл logo.jpg не найден в корне репозитория. Пожалуйста, загрузите его.")
+    st.warning("https://github.com/ulugbeknurullaev22-source/FBU/blob/cbd7e8a26544fdf4cf67a3acaa7bb1ba1c8aba16/logo.jpg")
 # st.markdown("""
 # <center>
 #     <img src="https://github.com/ulugbeknurullaev22-source/FBU/blob/c9f0d640104508e82abd1251ee8c8eb4bc323f32/photo_2026-09-20_18-15-37.jpg" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
