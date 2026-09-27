@@ -45,27 +45,24 @@ st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 # ==============================================================================
 # Логотип выводится строго по центру шапки без дурацкого значка Zoom
 
-with open("logo.jpg","rb") as f:
-    logo = base64.b64encode(f.read.()).decode()
-
-st.markdown(
-
-    f"""
-
-    <div style="text-align: center;">
-
-        <img src="data:image/jpeg;base64,{logo}" 
-
-             style="width:150px;">
-
-    </div>
-
-    """,
-
-    unsafe_allow_html=True
-
-)
-
+try:
+    with open("logo.jpg", "rb") as f:
+        # Убрана лишняя точка: вместо f.read.() пишем f.read()
+        logo_encoded = base64.b64encode(f.read()).decode()
+    
+    # Отображение логотипа строго по центру и без значка Zoom
+    st.markdown(
+        f"""
+        <div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">
+            <img src="data:image/jpeg;base64,{logo_encoded}" 
+                 style="width: 150px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,112,192,0.3); pointer-events: none;">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+#except FileNotFoundError:
+    # Фолбэк на случай, если файл logo.jpg ещё не загрузился в репозиторий
+ #   st.warning("Файл logo.jpg не найден в корне репозитория. Пожалуйста, загрузите его.")
 # st.markdown("""
 # <center>
 #     <img src="https://github.com/ulugbeknurullaev22-source/FBU/blob/c9f0d640104508e82abd1251ee8c8eb4bc323f32/photo_2026-09-20_18-15-37.jpg" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
