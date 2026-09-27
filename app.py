@@ -6,19 +6,16 @@ import plotly.express as px
 # Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-st.markdown("""
+st.container("""
 <style>
-    /* 1. Находим и кастомизируем стандартные контейнеры Streamlit, в которые обернуты ваши карточки */
     div[data-testid="stElementContainer"] div[style*="border"] {
         background: rgba(23, 42, 69, 0.4) !important;
         border: 1px solid rgba(0, 112, 192, 0.25) !important;
         border-radius: 16px !important;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-        /* Плавный переход для анимации (0.4 секунды) */
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
     }
     
-    /* 2. АНИМАЦИЯ: Свечение и микро-подъём карточки строго при наведении мыши */
     div[data-testid="stElementContainer"] div[style*="border"]:hover {
         transform: translateY(-8px) scale(1.01) !important; /* Легкий взлет карточки вверх */
         border-color: #38EF7D !important; /* Граница карточки загорается неоново-зеленым */
