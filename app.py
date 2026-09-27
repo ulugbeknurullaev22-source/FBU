@@ -179,9 +179,32 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (REAL PROFILE PHOTOS INCLUDED)
+# TAB 4: ABOUT FBU COMPANY (REAL PROFILE PHOTOS & ISOLATED HOVER GLOW)
 # ==============================================================================
 with tab4:
+    # Внедряем изолированный стиль: теперь он применится строго к карточкам с классом fbu-glowing-card
+    st.markdown("""
+    <style>
+        .fbu-glowing-card {
+            background: rgba(23, 42, 69, 0.4) !important;
+            border: 1px solid rgba(0, 112, 192, 0.25) !important;
+            border-radius: 16px !important;
+            padding: 30px 20px !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+            text-align: center !important;
+            margin-bottom: 20px !important;
+        }
+        
+        /* Свечение активируется ИСКЛЮЧИТЕЛЬНО при наведении на fbu-glowing-card */
+        .fbu-glowing-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            border-color: #38EF7D !important; /* Контур становится неоново-зеленым */
+            box-shadow: 0 0 35px rgba(56, 239, 125, 0.4), 0 12px 35px rgba(0, 0, 0, 0.6) !important; /* Зеленый неоновый Glow */
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
     st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("## 👥 Meet Our Engineering Board")
@@ -189,6 +212,7 @@ with tab4:
     
     p1, p2, p3 = st.columns(3)
     
+    # Функция для безопасного кодирования фото участников в Base64
     def get_user_photo(filename):
         try:
             with open(filename, "rb") as f:
@@ -196,62 +220,56 @@ with tab4:
         except FileNotFoundError:
             return None
 
-
-   
-
     photo_u = get_user_photo("ulugbek.jpg")
-    photo_f = get_user_photo("firdavs.png")
+    photo_f = get_user_photo("firdavs.jpg")
     photo_b = get_user_photo("baxtiyor.jpg")
 
     default_avatar = "https://flaticon.com"
 
     with p1:
-        with st.container(border=True):
-            img_src = f"data:image/jpeg;base64,{photo_u}" if photo_u else default_avatar
-            st.markdown(f"""
-            <center>
-                <br>
-                <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
-                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2>
-                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p>
-                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
-                <br>
-                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p>
-                <p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p>
-                <br>
-            </center>
-            """, unsafe_allow_html=True)
+        img_src = f"data:image/jpeg;base64,{photo_u}" if photo_u else default_avatar
+        st.markdown(f"""
+        <div class="fbu-glowing-card">
+            <br>
+            <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
+            <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2>
+            <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p>
+            <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+            <br>
+            <p style='margin-top:10px; margin-bottom:5px; color:#F8F9FA;'>📞 <b>Contact:</b> +998774147727</p>
+            <p style='margin:0; color:#F8F9FA;'>✈️ <b>Telegram:</b> @nurullaeev</p>
+            <br>
+        </div>
+        """, unsafe_allow_html=True)
 
     with p2:
-        with st.container(border=True):
-            img_src = f"data:image/jpeg;base64,{photo_f}" if photo_f else default_avatar
-            st.markdown(f"""
-            <center>
-                <br>
-                <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
-                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2>
-                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p>
-                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
-                <br>
-                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p>
-                <p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p>
-                <br>
-            </center>
-            """, unsafe_allow_html=True)
+        img_src = f"data:image/jpeg;base64,{photo_f}" if photo_f else default_avatar
+        st.markdown(f"""
+        <div class="fbu-glowing-card">
+            <br>
+            <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
+            <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2>
+            <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p>
+            <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+            <br>
+            <p style='margin-top:10px; margin-bottom:5px; color:#F8F9FA;'>📞 <b>Contact:</b> +998902535318</p>
+            <p style='margin:0; color:#F8F9FA;'>✈️ <b>Telegram:</b> @nabijanov111</p>
+            <br>
+        </div>
+        """, unsafe_allow_html=True)
 
     with p3:
-        with st.container(border=True):
-            img_src = f"data:image/jpeg;base64,{photo_b}" if photo_b else default_avatar
-            st.markdown(f"""
-            <center>
-                <br>
-                <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
-                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2>
-                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p>
-                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
-                <br>
-                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p>
-                <p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p>
-                <br>
-            </center>
-            """, unsafe_allow_html=True)
+        img_src = f"data:image/jpeg;base64,{photo_b}" if photo_b else default_avatar
+        st.markdown(f"""
+        <div class="fbu-glowing-card">
+            <br>
+            <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
+            <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2>
+            <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p>
+            <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+            <br>
+            <p style='margin-top:10px; margin-bottom:5px; color:#F8F9FA;'>📞 <b>Contact:</b> +998507797229</p>
+            <p style='margin:0; color:#F8F9FA;'>✈️ <b>Telegram:</b> @sbyxha</p>
+            <br>
+        </div>
+        """, unsafe_allow_html=True)
