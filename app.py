@@ -46,7 +46,7 @@ st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
 # Логотип выводится строго по центру шапки без дурацкого значка Zoom
 st.markdown("""
 <center>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJd2zRkErePMNxTD0I1H7p9v0sF4MzuHpx8zxgFie1w&s" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
+    <img src="https://github.com/ulugbeknurullaev22-source/FBU/blob/c9f0d640104508e82abd1251ee8c8eb4bc323f32/photo_2026-09-20_18-15-37.jpg" width="165" style="border-radius:14px; box-shadow:0 6px 22px rgba(0,112,192,0.35); margin-top:10px; margin-bottom:15px; pointer-events:none;">
 </center>
 """, unsafe_allow_html=True)
 
