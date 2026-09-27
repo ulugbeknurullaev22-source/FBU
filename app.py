@@ -168,30 +168,79 @@ with tab3:
     st.plotly_chart(fig_imp, use_container_width=True, config={'displayModeBar': False})
 
 # ==============================================================================
-# TAB 4: ABOUT FBU COMPANY (CENTERED & EXPANDED PROFILE LAYOUT)
+# TAB 4: ABOUT FBU COMPANY (REAL PROFILE PHOTOS INCLUDED)
 # ==============================================================================
 with tab4:
-    st.title("🛡 NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
     st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
     st.write("## 👥 Meet Our Engineering Board")
     st.write("---")
     
     p1, p2, p3 = st.columns(3)
     
-    # Pre-loading localized data representations to prevent compilation breakage
-    avatar_html = "<center><br><div style='font-size:75px; color:#8892B0; margin-bottom:10px;'>👤</div>"
-    
+    # Функция для безопасного кодирования фото участников в Base64
+    def get_user_photo(filename):
+        try:
+            with open(filename, "rb") as f:
+                return base64.b64encode(f.read()).decode()
+        except FileNotFoundError:
+            return None
+
+    # Поочередно считываем три фотографии из корня репозитория
+    photo_u = get_user_photo("ulugbek.jpg")
+    photo_f = get_user_photo("firdavs.jpg")
+    photo_b = get_user_photo("baxtiyor.jpg")
+
+    # Базовый шаблон-заглушка на случай, если файл картинки физически отсутствует
+    default_avatar = "https://flaticon.com"
+
     with p1:
         with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p><br></center>", unsafe_allow_html=True)
+            img_src = f"data:image/jpeg;base64,{photo_u}" if photo_u else default_avatar
+            st.markdown(f"""
+            <center>
+                <br>
+                <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
+                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nurillayev Ulug'bek</h2>
+                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Captain & Lead Systems Director, FBU</p>
+                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+                <br>
+                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998774147727</p>
+                <p style='margin:0;'>✈️ <b>Telegram:</b> @nurullaeev</p>
+                <br>
+            </center>
+            """, unsafe_allow_html=True)
 
     with p2:
         with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p><p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p><br></center>", unsafe_allow_html=True)
+            img_src = f"data:image/jpeg;base64,{photo_f}" if photo_f else default_avatar
+            st.markdown(f"""
+            <center>
+                <br>
+                <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
+                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Nabijonov Firdavs</h2>
+                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Senior Vibe Engineer & Full-Stack</p>
+                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+                <br>
+                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998902535318</p>
+                <p style='margin:0;'>✈️ <b>Telegram:</b> @nabijanov111</p>
+                <br>
+            </center>
+            """, unsafe_allow_html=True)
 
     with p3:
         with st.container(border=True):
-            st.markdown(avatar_html + "<h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2><p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p><p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p><br><p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p><p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p><br></center>", unsafe_allow_html=True)
-
-st.write("---")
-st.markdown("<div style='text-align: center; color: #8892B0; font-size: 13px;'>🏢 FBU CORPORATION &nbsp;|&nbsp; 🏢 INHA UNIVERSITY IN TASHKENT (IUT)</div>", unsafe_allow_html=True)
+            img_src = f"data:image/jpeg;base64,{photo_b}" if photo_b else default_avatar
+            st.markdown(f"""
+            <center>
+                <br>
+                <img src="{img_src}" style="width:120px; height:120px; object-fit:cover; border-radius:50%; box-shadow:0 4px 15px rgba(0,112,192,0.3); margin-bottom:10px; pointer-events:none;">
+                <h2 style='margin:0; font-size:28px; color:#FFFFFF;'>Soxibov Baxtiyorjon</h2>
+                <p style='color:#38EF7D; font-weight:bold; font-size:15px; margin-top:8px; margin-bottom:8px;'>Strategic Innovation Head</p>
+                <p style='color:#8892B0; font-size:14px; margin:0;'>🎓 Student at Inha University in Tashkent (IUT)</p>
+                <br>
+                <p style='margin-top:10px; margin-bottom:5px;'>📞 <b>Contact:</b> +998507797229</p>
+                <p style='margin:0;'>✈️ <b>Telegram:</b> @sbyxha</p>
+                <br>
+            </center>
+            """, unsafe_allow_html=True)
