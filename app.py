@@ -6,23 +6,23 @@ import plotly.express as px
 # Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-st.markdown("""
-<style>
-    div[data-testid="stElementContainer"] div[style*="border"] {
-        background: rgba(23, 42, 69, 0.4) !important;
-        border: 1px solid rgba(0, 112, 192, 0.25) !important;
-        border-radius: 16px !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-    }
+# st.markdown("""
+# <style>
+#     div[data-testid="stElementContainer"] div[style*="border"] {
+#         background: rgba(23, 42, 69, 0.4) !important;
+#         border: 1px solid rgba(0, 112, 192, 0.25) !important;
+#         border-radius: 16px !important;
+#         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+#         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+#     }
     
-    div[data-testid="stElementContainer"] div[style*="border"]:hover {
-        transform: translateY(-8px) scale(1.01) !important; /* Легкий взлет карточки вверх */
-        border-color: #38EF7D !important; /* Граница карточки загорается неоново-зеленым */
-        box-shadow: 0 0 30px rgba(56, 239, 125, 0.4), 0 12px 35px rgba(0, 0, 0, 0.6) !important; /* Мощный неоновый Glow-эффект */
-    }
-</style>
-""", unsafe_allow_html=True)
+#     div[data-testid="stElementContainer"] div[style*="border"]:hover {
+#         transform: translateY(-8px) scale(1.01) !important; /* Легкий взлет карточки вверх */
+#         border-color: #38EF7D !important; /* Граница карточки загорается неоново-зеленым */
+#         box-shadow: 0 0 30px rgba(56, 239, 125, 0.4), 0 12px 35px rgba(0, 0, 0, 0.6) !important; /* Мощный неоновый Glow-эффект */
+#     }
+# </style>
+# """, unsafe_allow_html=True)
     
 
 
@@ -182,7 +182,7 @@ with tab3:
 # TAB 4: ABOUT FBU COMPANY (REAL PROFILE PHOTOS & ISOLATED HOVER GLOW)
 # ==============================================================================
 with tab4:
-    # Внедряем изолированный стиль: теперь он применится строго к карточкам с классом fbu-glowing-card
+    
     st.markdown("""
     <style>
         .fbu-glowing-card {
@@ -196,7 +196,6 @@ with tab4:
             margin-bottom: 20px !important;
         }
         
-        /* Свечение активируется ИСКЛЮЧИТЕЛЬНО при наведении на fbu-glowing-card */
         .fbu-glowing-card:hover {
             transform: translateY(-8px) scale(1.02) !important;
             border-color: #38EF7D !important; /* Контур становится неоново-зеленым */
@@ -221,7 +220,7 @@ with tab4:
             return None
 
     photo_u = get_user_photo("ulugbek.jpg")
-    photo_f = get_user_photo("firdavs.jpg")
+    photo_f = get_user_photo("firdavs.png")
     photo_b = get_user_photo("baxtiyor.jpg")
 
     default_avatar = "https://flaticon.com"
