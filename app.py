@@ -6,7 +6,7 @@ import plotly.express as px
 # Глобальная настройка страницы
 st.set_page_config(page_title="AI Anti-Fraud Hub — Team C1094BD7", layout="wide", initial_sidebar_state="collapsed")
 
-st.container("""
+st.markdown("""
 <style>
     div[data-testid="stElementContainer"] div[style*="border"] {
         background: rgba(23, 42, 69, 0.4) !important;
