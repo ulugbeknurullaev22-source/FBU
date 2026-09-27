@@ -89,25 +89,68 @@ tab1, tab2, tab3, tab4 = st.tabs(["🚀 Core Architecture", "📊 Live Metrics H
 
 
 # ==============================================================================
-# TAB 1: CORE ARCHITECTURE
+# TAB 1: CORE ARCHITECTURE & PROJECT OVERVIEW
 # ==============================================================================
 with tab1:
-    st.write("### Intelligent Threat Filtering Ecosystem")
-    st.markdown("In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. Reviewing every alert manually compromises security response times and burns critical human resources. **Our Solution:** We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score.")
+    # --- Project Header & Team Info ---
+    st.title("🛡️ NEXUS: Next-Gen AI Anti-Fraud Analytics Platform")
+    st.subheader("Advanced Financial Monitoring System | Powered by Team C1094BD7")
+    
+    st.markdown("""
+    **Engineering Board:** 
+    * 🎓 *Nurillayev Ulug'bek* 
+    * 🎓 *Nabijonov Firdavs* 
+    * 🎓 *Soxibov Baxtiyorjon*
+    """)
+    
+    # --- Global Operational Status ---
+    st.info(
+        "**Global Operational Status:** Standing at the intersection of Big Data and Cybersecurity. "
+        "Our neural-gradient framework dissects financial transaction patterns in real-time, "
+        "isolating high-risk threats from millions of safe everyday operations."
+    )
+    
     st.write("---")
+    
+    # --- Core Problem & Solution ---
+    st.write("### ⚙️ Intelligent Threat Filtering Ecosystem")
+    st.markdown("""
+    In high-volume banking sectors, compliance departments face an informational avalanche — hundreds of thousands of daily automated system flags. 
+    Reviewing every alert manually compromises security response times and burns critical human resources. 
+    
+    **Our Solution:** We constructed an end-to-end analytical core that ingests raw, relational historical transaction databases. 
+    By converting raw money movements into structured behavior maps, the AI instantly computes an escalation probability score, 
+    effectively suppressing operational noise and identifying verified risk signals.
+    """)
+    
+    st.write("---")
+    
+    # --- Feature Engineering & Behavioral Pillars ---
     st.write("### 🔍 Feature Engineering & Behavioral Pillars")
     
     col1, col2, col3 = st.columns(3)
     with col1:
-        with st.expander("💸 1. Capital Velocity & Drainage"):
-            st.write("Rapid fund rotation. If an account receives a major credit placement (Kirim) and mirrors it via multiple outbound transfers (Chiqim) within a tight time-window, the AI flags classic money-laundering transit behavior.")
+        with st.expander("💸 1. Capital Velocity & Drainage", expanded=True):
+            st.markdown("""
+            **Rapid fund rotation analysis.**  
+            If an account receives a major credit placement (*Kirim*) and instantly mirrors it via multiple outbound transfers (*Chiqim*) within a tight, sub-hour time-window, the AI flags classic money-laundering transit behavior and velocity manipulation.
+            """)
+            
     with col2:
-        with st.expander("🌍 2. Cross-Border Channel Friction"):
-            st.write("Sudden geographical shifts. When historical spending patterns rooted heavily in local domestic systems switch instantly to high-volume international wires (Xalqaro), the risk weight mutates to Maximum.")
+        with st.expander("🌍 2. Cross-Border Channel Friction", expanded=True):
+            st.markdown("""
+            **Sudden geographical and channel shifts.**  
+            When historical spending patterns rooted heavily in local domestic systems switch instantly to high-volume international wires (*Xalqaro*), bypassing standard channel logic, the risk weight mutates to Maximum.
+            """)
+            
     with col3:
-        with st.expander("📈 3. Volatility & Deviation Spikes"):
-            st.write("Absolute sum mutation. The framework tracks rolling behavioral baselines. A transaction that severely overshoots a customer's standard deviation index triggers immediate automated containment.")
+        with st.expander("📈 3. Volatility & Deviation Spikes", expanded=True):
+            st.markdown("""
+            **Absolute sum and density mutation.**  
+            The framework continuously tracks rolling historical behavioral baselines. Any incoming transaction that severely overshoots a customer's standard deviation index or standard transaction count triggers immediate automated containment.
+            """)
 
+# ==============================================================================
 # ==============================================================================
 # TAB 2: LIVE METRICS HUB
 # ==============================================================================
